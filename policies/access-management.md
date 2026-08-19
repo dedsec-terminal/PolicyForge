@@ -183,9 +183,9 @@ Service accounts and machine identities (API keys, OAuth 2.0 client credentials,
 
 Violations of this policy by FinNexus Solutions employees, contractors, or third-party vendors are treated with the severity commensurate with the associated risk:
 
-- **Minor Violation** (e.g., sharing credentials with a colleague for a brief period, failing to log out of a session): Formal written warning; mandatory re-completion of the Security Awareness Training module; note in personnel file.
-- **Moderate Violation** (e.g., provisioning access without following the formal approval process, failing to revoke access for a departed vendor): Mandatory retraining; temporary access privilege reduction; escalation to HR for disciplinary review.
-- **Severe Violation** (e.g., granting unauthorized access to the CDE or payment systems, wilful circumvention of MFA controls, misuse of privileged credentials): Immediate suspension of all access pending investigation; potential termination of employment or contract; referral for legal action where applicable under Indian law, GDPR enforcement, or PCI DSS incident reporting requirements.
+- **Tier 1 - Minor Breach** (e.g., sharing credentials with a colleague for a brief period, failing to log out of a session): Formal written warning; mandatory re-completion of the Security Awareness Training module; note in personnel file.
+- **Tier 2 - Moderate Breach** (e.g., provisioning access without following the formal approval process, failing to revoke access for a departed vendor): Mandatory retraining; temporary access privilege reduction; escalation to HR for disciplinary review.
+- **Tier 3 - Severe Breach** (e.g., granting unauthorized access to the CDE or payment systems, wilful circumvention of MFA controls, misuse of privileged credentials): Immediate suspension of all access pending investigation; potential termination of employment or contract; referral for legal action where applicable under the Indian IT Act 2000 or the DPDP Act 2023; regulatory notification assessment by Legal and Compliance, including CERT-In, the Data Protection Board of India, or an applicable EU supervisory authority where required by law.
 
 All violations MUST be documented and reported to the CISO. Violations that may constitute a personal data breach under DPDP Act 2023 or GDPR MUST be escalated immediately to the Legal and Compliance team for breach notification assessment.
 
