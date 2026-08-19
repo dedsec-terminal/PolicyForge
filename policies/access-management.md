@@ -4,7 +4,7 @@
 | :--- | :--- |
 | **Policy ID** | AM |
 | **Document Title** | Access Management Policy |
-| **Version** | 1.0 |
+| **Version** | X.X |
 | **Status** | Draft (illustrative) |
 | **Classification** | Internal - Restricted |
 | **Effective Date** | DD.MM.YY |
@@ -207,4 +207,4 @@ All violations MUST be documented and reported to the CISO. Violations that may 
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | DD.MM.YY | IT Security Lead | Initial policy draft authored and approved. |
+| X.X | DD.MM.YY | IT Security Lead | Initial policy draft authored and approved. |
