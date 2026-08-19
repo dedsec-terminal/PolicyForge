@@ -7,7 +7,7 @@
 | Public routing | PASS | | 1 |
 | CTM metadata | PASS | | 2 |
 | CTM identifier normalization | PASS | | 2 |
-| Audit report structure | PENDING | | 3 |
-| Standards currency | PENDING | | 3 |
+| Audit report structure | PASS | | 3 |
+| Standards currency | PASS | | 3 |
 | Global consistency | PENDING | | 4 |
 | Live browser verification | PENDING | | 5 |
