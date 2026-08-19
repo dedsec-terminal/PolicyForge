@@ -4,7 +4,7 @@
 | :--- | :--- |
 | **Policy ID**          | BC                                                               |
 | **Document Title**     | Business Continuity & Backup Policy                              |
-| **Version**            | 1.0                                                              |
+| **Version**            | X.X                                                              |
 | **Status**             | Draft (illustrative)                                             |
 | **Classification**     | Internal - Restricted                                            |
 | **Effective Date**     | DD.MM.YY                                                       |
@@ -183,4 +183,4 @@ All Tier 3 violations MUST be treated as critical risk events and reported immed
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | DD.MM.YY | CISO, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| X.X | DD.MM.YY | CISO, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
