@@ -32,6 +32,6 @@ def md_table_to_csv(md_path, csv_path, target_header=None):
         writer = csv.writer(f)
         writer.writerows(rows)
 
-md_table_to_csv('mapping/control-traceability-matrix.md', 'mapping/control-traceability-matrix.csv', 'Safeguard ID | Policy | Safeguard Summary')
+md_table_to_csv('mapping/control-traceability-matrix.md', 'mapping/control-traceability-matrix.csv', 'Control ID | Policy / Control | Objective')
 md_table_to_csv('register/exception-log.md', 'register/exception-log.csv')
 md_table_to_csv('register/review-cadence-tracker.md', 'register/review-cadence-tracker.csv')

@@ -2,7 +2,7 @@
 
 | Field | Details |
 | :--- | :--- |
-| **Policy ID** | VD |
+| **Policy ID** | VR |
 | **Document Title** | Vendor & Third-Party Risk Policy |
 | **Version** | 1.0 |
 | **Status** | Active |
