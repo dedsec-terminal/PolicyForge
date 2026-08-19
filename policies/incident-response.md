@@ -4,7 +4,7 @@
 | :--- | :--- |
 | **Policy ID**          | IR                                                               |
 | **Document Title**     | Incident Response Policy                                         |
-| **Version**            | 1.0                                                              |
+| **Version**            | X.X                                                              |
 | **Status**             | Draft (illustrative)                                             |
 | **Classification**     | Internal - Restricted                                            |
 | **Effective Date**     | DD.MM.YY                                                       |
@@ -173,4 +173,4 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | DD.MM.YY | IT Security Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| X.X | DD.MM.YY | IT Security Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
