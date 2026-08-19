@@ -1,682 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>PolicyForge — FinNexus Security Policy Suite</title>
-  <meta name="description" content="PolicyForge: Enterprise Security Policy & Governance documentation for FinNexus Solutions. Browse authored policies, control traceability matrices, and governance registers." />
+  <meta name="description" content="PolicyForge: Enterprise security policies, control traceability, and governance registers for FinNexus Solutions."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
-    /* ── Reset & base ──────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    :root {
-      --sidebar-bg:    #0f1117;
-      --sidebar-border:#1e2230;
-      --sidebar-text:  #9aa3b4;
-      --sidebar-head:  #5a6478;
-      --link-color:    #c5cde0;
-      --link-active-bg:#1a2035;
-      --link-active:   #7eb6ff;
-      --link-hover-bg: #161c2a;
-      --header-bg:     #080b12;
-      --header-border: #1a1f2e;
-      --content-bg:    #f8f9fb;
-      --content-text:  #1a1d23;
-      --accent:        #2563eb;
-      --accent-light:  #dbeafe;
-      --table-head-bg: #1e2230;
-      --table-head-fg: #c5cde0;
-      --table-alt:     #f0f2f7;
-      --table-border:  #d1d5e0;
-      --code-bg:       #eef0f5;
-      --sidebar-w:     270px;
-      --header-h:      48px;
-      --font-ui:       -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-content:  Georgia, 'Times New Roman', serif;
+    :root{
+      --sb-bg:#111827;
+      --sb-border:#1f2937;
+      --sb-text:#9ca3af;
+      --sb-head:#4b5563;
+      --sb-link:#d1d5db;
+      --sb-active-bg:#1e2d4a;
+      --sb-active:#818cf8;
+      --sb-hover:#1a2333;
+      --hdr-bg:#0d1117;
+      --hdr-border:#1f2937;
+      --accent:#6366f1;
+      --accent2:#818cf8;
+      --content-bg:#ffffff;
+      --content-text:#111827;
+      --th-bg:#1e293b;
+      --th-fg:#e2e8f0;
+      --tr-alt:#f8fafc;
+      --tr-hover:#eef2ff;
+      --td-border:#e2e8f0;
+      --code-bg:#f1f5f9;
+      --sb-w:260px;
+      --hdr-h:50px;
+      --ui:'Inter',system-ui,sans-serif;
+      --prose:'Source Serif 4',Georgia,serif;
     }
 
-    html, body { height: 100%; }
+    html,body{height:100%}
+    body{font-family:var(--ui);background:var(--content-bg);color:var(--content-text);display:flex;flex-direction:column;min-height:100vh}
 
-    body {
-      font-family: var(--font-ui);
-      background: var(--content-bg);
-      color: var(--content-text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    /* Header */
+    #hdr{
+      position:fixed;top:0;left:0;right:0;height:var(--hdr-h);
+      background:var(--hdr-bg);border-bottom:1px solid var(--hdr-border);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 20px;z-index:100;gap:12px;
     }
-
-    /* ── Header ────────────────────────────────────────────────── */
-    #site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--header-h);
-      background: var(--header-bg);
-      border-bottom: 1px solid var(--header-border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-      z-index: 100;
+    #hdr .wordmark{
+      font-size:15px;font-weight:700;color:#f9fafb;
+      letter-spacing:-0.01em;white-space:nowrap;
     }
-
-    #site-header .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    #hdr .wordmark span{color:var(--accent2);font-weight:400;font-size:13px;margin-left:8px}
+    #hdr a.gh-link{
+      font-size:12px;color:#6b7280;text-decoration:none;
+      display:flex;align-items:center;gap:5px;
+      padding:5px 11px;border:1px solid #374151;border-radius:6px;
+      transition:color .15s,border-color .15s;white-space:nowrap;flex-shrink:0;
     }
+    #hdr a.gh-link:hover{color:var(--accent2);border-color:#4b5563}
+    #hdr a.gh-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
 
-    #site-header .logo-mark {
-      width: 28px; height: 28px;
-      background: var(--accent);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+    /* Layout */
+    #wrap{display:flex;flex:1;margin-top:var(--hdr-h);min-height:calc(100vh - var(--hdr-h))}
+
+    /* Sidebar */
+    #sb{
+      width:var(--sb-w);background:var(--sb-bg);border-right:1px solid var(--sb-border);
+      position:fixed;top:var(--hdr-h);bottom:0;left:0;
+      display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;
     }
+    #sb::-webkit-scrollbar{width:3px}
+    #sb::-webkit-scrollbar-thumb{background:#374151;border-radius:3px}
 
-    #site-header .logo-mark svg {
-      width: 16px; height: 16px;
-      fill: #fff;
+    /* Search */
+    #sq{padding:11px 12px 9px;position:sticky;top:0;background:var(--sb-bg);z-index:5;border-bottom:1px solid var(--sb-border)}
+    .si{position:relative}
+    #sq input{
+      width:100%;background:#1a2333;border:1px solid #2d3748;border-radius:6px;
+      color:#d1d5db;font-family:var(--ui);font-size:12px;
+      padding:6px 10px 6px 28px;outline:none;transition:border-color .15s;
     }
+    #sq input::placeholder{color:#4b5563}
+    #sq input:focus{border-color:var(--accent)}
+    .si svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:12px;height:12px;stroke:#4b5563;fill:none;pointer-events:none}
 
-    #site-header .brand-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: #e2e8f0;
-      letter-spacing: 0.01em;
+    /* Nav */
+    #nav{padding:6px 0 24px}
+    .ng{margin-bottom:2px}
+    .ng-lbl{font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--sb-head);padding:10px 14px 3px}
+    .nl{
+      display:block;padding:5px 14px 5px 18px;font-size:12.5px;color:var(--sb-text);
+      text-decoration:none;cursor:pointer;border-left:2px solid transparent;
+      transition:background .1s,color .1s,border-color .1s;line-height:1.4;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     }
+    .nl:hover{background:var(--sb-hover);color:var(--sb-link)}
+    .nl.active{background:var(--sb-active-bg);color:var(--sb-active);border-left-color:var(--sb-active);font-weight:500}
+    .nl.hidden{display:none}
 
-    #site-header .brand-sub {
-      font-size: 12px;
-      color: #5a6478;
-      margin-left: 2px;
-    }
+    /* Main */
+    #main{margin-left:var(--sb-w);flex:1;display:flex;flex-direction:column;min-width:0}
+    #cw{flex:1;padding:40px 56px 64px;max-width:900px}
+    #loader{display:none;padding:56px;color:#9ca3af;font-size:13px}
+    #loader.v{display:block}
+    #err{display:none;padding:40px 56px;font-size:13px;color:#ef4444;line-height:1.6}
+    #err.v{display:block}
 
-    #site-header .header-right a {
-      font-size: 12px;
-      color: #5a7bb0;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 10px;
-      border: 1px solid #1e2a3a;
-      border-radius: 5px;
-      transition: color 0.15s, border-color 0.15s;
-    }
+    /* Markdown */
+    #md{font-family:var(--prose);font-size:16px;line-height:1.85;color:#1e293b}
+    #md h1{font-family:var(--ui);font-size:22px;font-weight:700;color:#0f172a;margin:0 0 6px;padding-bottom:10px;border-bottom:2px solid #e2e8f0;line-height:1.3}
+    #md h2{font-family:var(--ui);font-size:16.5px;font-weight:600;color:#1e293b;margin:30px 0 9px;padding-bottom:5px;border-bottom:1px solid #e2e8f0}
+    #md h3{font-family:var(--ui);font-size:13.5px;font-weight:600;color:#334155;margin:22px 0 6px;text-transform:uppercase;letter-spacing:.05em}
+    #md h4{font-family:var(--ui);font-size:13px;font-weight:600;color:#475569;margin:16px 0 5px}
+    #md p{margin:0 0 13px}
+    #md a{color:var(--accent);text-decoration:none}
+    #md a:hover{text-decoration:underline}
+    #md ul,#md ol{margin:4px 0 13px 20px}
+    #md li{margin-bottom:3px}
+    #md li>p{margin-bottom:3px}
+    #md strong{font-weight:700;color:#0f172a}
+    #md hr{border:none;border-top:1px solid #e2e8f0;margin:24px 0}
+    #md code{background:var(--code-bg);border:1px solid #e2e8f0;border-radius:4px;font-size:12.5px;padding:1px 5px;font-family:'Cascadia Code',Consolas,'Courier New',monospace;color:#3730a3}
+    #md pre{background:#0f172a;border-radius:7px;padding:16px;overflow-x:auto;margin:12px 0 18px}
+    #md pre code{background:none;border:none;padding:0;color:#cbd5e1;font-size:12.5px}
+    #md blockquote{border-left:3px solid var(--accent);background:#eef2ff;padding:10px 15px;margin:12px 0;border-radius:0 4px 4px 0;color:#312e81;font-size:15px}
 
-    #site-header .header-right a:hover {
-      color: #7eb6ff;
-      border-color: #2a3d5a;
-    }
+    /* Tables */
+    .tw{overflow-x:auto;margin:14px 0 22px;border-radius:6px;border:1px solid var(--td-border)}
+    #md table{border-collapse:collapse;width:100%;font-family:var(--ui);font-size:12.5px;line-height:1.5;min-width:480px}
+    #md thead th{background:var(--th-bg);color:var(--th-fg);padding:8px 12px;text-align:left;font-weight:600;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid #374151}
+    #md thead th:not(:last-child){border-right:1px solid #374151}
+    #md tbody tr:nth-child(odd){background:#fff}
+    #md tbody tr:nth-child(even){background:var(--tr-alt)}
+    #md tbody tr:hover{background:var(--tr-hover)}
+    #md td{padding:7px 12px;border-bottom:1px solid var(--td-border);vertical-align:top}
+    #md td:not(:last-child){border-right:1px solid var(--td-border)}
 
-    #site-header .header-right svg {
-      width: 14px; height: 14px;
-      fill: currentColor;
-    }
+    /* Footer */
+    #ftr{margin-left:var(--sb-w);padding:13px 56px;font-size:11px;color:#9ca3af;border-top:1px solid #f1f5f9;background:#f8fafc}
+    #ftr a{color:#6366f1;text-decoration:none}
+    #ftr a:hover{text-decoration:underline}
 
-    /* ── Layout shell ───────────────────────────────────────────── */
-    #layout {
-      display: flex;
-      flex: 1;
-      margin-top: var(--header-h);
-      min-height: calc(100vh - var(--header-h));
-    }
-
-    /* ── Sidebar ───────────────────────────────────────────────── */
-    #sidebar {
-      width: var(--sidebar-w);
-      background: var(--sidebar-bg);
-      border-right: 1px solid var(--sidebar-border);
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: var(--header-h);
-      bottom: 0;
-      left: 0;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-
-    #sidebar::-webkit-scrollbar { width: 4px; }
-    #sidebar::-webkit-scrollbar-track { background: transparent; }
-    #sidebar::-webkit-scrollbar-thumb { background: #1e2640; border-radius: 4px; }
-
-    /* Search box */
-    #search-wrap {
-      padding: 12px 14px 8px;
-      position: sticky;
-      top: 0;
-      background: var(--sidebar-bg);
-      z-index: 10;
-      border-bottom: 1px solid var(--sidebar-border);
-    }
-
-    .search-inner {
-      position: relative;
-    }
-
-    #search {
-      width: 100%;
-      background: #161c2a;
-      border: 1px solid #1e2640;
-      border-radius: 6px;
-      color: #c5cde0;
-      font-size: 12px;
-      padding: 7px 10px 7px 30px;
-      outline: none;
-      transition: border-color 0.15s;
-      font-family: var(--font-ui);
-    }
-
-    #search::placeholder { color: #3d4861; }
-    #search:focus { border-color: #2a3d6a; }
-
-    .search-icon {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 13px; height: 13px;
-      fill: none;
-      stroke: #3d4861;
-      pointer-events: none;
-    }
-
-    /* Nav groups */
-    #nav { padding: 8px 0 20px; }
-
-    .nav-group { margin-bottom: 4px; }
-
-    .nav-group-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--sidebar-head);
-      padding: 10px 16px 4px;
-    }
-
-    .nav-link {
-      display: block;
-      padding: 6px 16px 6px 20px;
-      font-size: 12.5px;
-      color: var(--sidebar-text);
-      text-decoration: none;
-      cursor: pointer;
-      border-left: 2px solid transparent;
-      transition: background 0.1s, color 0.1s, border-color 0.1s;
-      line-height: 1.4;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .nav-link:hover {
-      background: var(--link-hover-bg);
-      color: var(--link-color);
-    }
-
-    .nav-link.active {
-      background: var(--link-active-bg);
-      color: var(--link-active);
-      border-left-color: var(--link-active);
-      font-weight: 500;
-    }
-
-    .nav-link.hidden { display: none; }
-
-    /* ── Main content pane ─────────────────────────────────────── */
-    #main {
-      margin-left: var(--sidebar-w);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    #content-wrap {
-      flex: 1;
-      padding: 40px 52px 60px;
-      max-width: 920px;
-    }
-
-    /* Loading state */
-    #loader {
-      display: none;
-      padding: 60px 52px;
-      color: #888;
-      font-size: 13px;
-    }
-
-    #loader.visible { display: block; }
-
-    /* Error state */
-    #error-msg {
-      display: none;
-      padding: 40px 52px;
-      color: #c0392b;
-      font-size: 13px;
-    }
-
-    #error-msg.visible { display: block; }
-
-    /* ── Markdown rendered content ─────────────────────────────── */
-    #md-content {
-      font-family: var(--font-content);
-      font-size: 15.5px;
-      line-height: 1.8;
-      color: #1a1d23;
-    }
-
-    #md-content h1 {
-      font-family: var(--font-ui);
-      font-size: 22px;
-      font-weight: 700;
-      color: #0d1117;
-      margin: 0 0 8px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #e2e6ef;
-      line-height: 1.3;
-    }
-
-    #md-content h2 {
-      font-family: var(--font-ui);
-      font-size: 17px;
-      font-weight: 600;
-      color: #1a2035;
-      margin: 32px 0 10px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #e8ebf4;
-    }
-
-    #md-content h3 {
-      font-family: var(--font-ui);
-      font-size: 14.5px;
-      font-weight: 600;
-      color: #2c3550;
-      margin: 24px 0 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    #md-content h4 {
-      font-family: var(--font-ui);
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #3a4260;
-      margin: 18px 0 6px;
-    }
-
-    #md-content p { margin: 0 0 14px; }
-
-    #md-content a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    #md-content a:hover { text-decoration: underline; }
-
-    #md-content ul, #md-content ol {
-      margin: 4px 0 14px 22px;
-    }
-
-    #md-content li { margin-bottom: 4px; }
-    #md-content li > p { margin-bottom: 4px; }
-
-    #md-content strong { font-weight: 700; color: #111; }
-    #md-content em { font-style: italic; }
-
-    #md-content hr {
-      border: none;
-      border-top: 1px solid #dde2ef;
-      margin: 28px 0;
-    }
-
-    /* Code */
-    #md-content code {
-      background: var(--code-bg);
-      border: 1px solid #dde2ef;
-      border-radius: 4px;
-      font-size: 13px;
-      padding: 1px 5px;
-      font-family: 'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace;
-      color: #1f2d50;
-    }
-
-    #md-content pre {
-      background: #12151f;
-      border: 1px solid #1e2640;
-      border-radius: 6px;
-      padding: 16px 18px;
-      overflow-x: auto;
-      margin: 14px 0 18px;
-    }
-
-    #md-content pre code {
-      background: none;
-      border: none;
-      padding: 0;
-      color: #c8d0e0;
-      font-size: 13px;
-    }
-
-    /* Blockquotes */
-    #md-content blockquote {
-      border-left: 3px solid #2563eb;
-      background: #f0f4ff;
-      padding: 10px 16px;
-      margin: 14px 0;
-      border-radius: 0 4px 4px 0;
-      color: #2c3a5c;
-      font-size: 14.5px;
-    }
-
-    /* ── Tables — critical for CTM content ─────────────────────── */
-    .table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 16px 0 24px;
-    }
-
-    #md-content table {
-      border-collapse: collapse;
-      width: 100%;
-      font-family: var(--font-ui);
-      font-size: 12.5px;
-      line-height: 1.5;
-      min-width: 500px;
-    }
-
-    #md-content thead th {
-      background: var(--table-head-bg);
-      color: var(--table-head-fg);
-      padding: 8px 12px;
-      text-align: left;
-      font-weight: 600;
-      font-size: 11px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border: 1px solid #2a3050;
-    }
-
-    #md-content tbody tr:nth-child(odd)  { background: #ffffff; }
-    #md-content tbody tr:nth-child(even) { background: var(--table-alt); }
-    #md-content tbody tr:hover { background: #dbeafe; }
-
-    #md-content td {
-      padding: 7px 12px;
-      border: 1px solid var(--table-border);
-      vertical-align: top;
-    }
-
-    /* ── Footer ────────────────────────────────────────────────── */
-    #site-footer {
-      margin-left: var(--sidebar-w);
-      padding: 14px 52px;
-      font-size: 11px;
-      color: #8a93a8;
-      border-top: 1px solid #e2e6ef;
-      background: #f2f4f9;
-    }
-
-    #site-footer a {
-      color: #5a7bb0;
-      text-decoration: none;
-    }
-    #site-footer a:hover { text-decoration: underline; }
-
-    /* ── Responsive ─────────────────────────────────────────────── */
-    @media (max-width: 720px) {
-      :root { --sidebar-w: 220px; }
-      #content-wrap { padding: 28px 24px 48px; }
-      #site-footer  { padding: 12px 24px; }
+    @media(max-width:700px){
+      :root{--sb-w:220px}
+      #cw,#ftr{padding-left:20px;padding-right:20px}
     }
   </style>
 </head>
 <body>
 
-<!-- ── Header ─────────────────────────────────────────────────── -->
-<header id="site-header">
-  <div class="brand">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6L12 2z"/>
-      </svg>
-    </div>
-    <div>
-      <div class="brand-name">PolicyForge</div>
-      <div class="brand-sub">FinNexus Solutions Security Policy Suite</div>
-    </div>
-  </div>
-  <div class="header-right">
-    <a href="https://github.com/dedsec-terminal/PolicyForge" target="_blank" rel="noopener">
-      <!-- GitHub mark -->
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-      </svg>
-      GitHub
-    </a>
-  </div>
+<header id="hdr">
+  <div class="wordmark">PolicyForge <span>FinNexus Solutions — Security Policy Suite</span></div>
+  <a class="gh-link" href="https://github.com/dedsec-terminal/PolicyForge" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    GitHub
+  </a>
 </header>
 
-<!-- ── Layout ──────────────────────────────────────────────────── -->
-<div id="layout">
-
-  <!-- Sidebar -->
-  <nav id="sidebar" aria-label="Document navigation">
-    <div id="search-wrap">
-      <div class="search-inner">
-        <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="7" stroke="#3d4861" stroke-width="2.5" fill="none"/>
-          <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="#3d4861" stroke-width="2.5"/>
-        </svg>
-        <input
-          type="search"
-          id="search"
-          placeholder="Filter documents…"
-          autocomplete="off"
-          spellcheck="false"
-          aria-label="Filter documents"
-        />
+<div id="wrap">
+  <nav id="sb" aria-label="Document navigation">
+    <div id="sq">
+      <div class="si">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input type="search" id="s" placeholder="Filter…" autocomplete="off" aria-label="Filter documents"/>
       </div>
     </div>
-
     <div id="nav">
-
-      <!-- Overview -->
-      <div class="nav-group" data-group="overview">
-        <div class="nav-group-label">Overview</div>
-        <a class="nav-link" data-path="../README.md" href="#readme" role="button">README</a>
+      <div class="ng"><div class="ng-lbl">Overview</div>
+        <a class="nl" data-src="README.md"                                    href="#readme">README</a>
       </div>
-
-      <!-- Policies -->
-      <div class="nav-group" data-group="policies">
-        <div class="nav-group-label">Policies</div>
-        <a class="nav-link" data-path="../policies/acceptable-use.md"               href="#acceptable-use"               role="button">Acceptable Use</a>
-        <a class="nav-link" data-path="../policies/access-management.md"            href="#access-management"            role="button">Access Management</a>
-        <a class="nav-link" data-path="../policies/asset-management.md"             href="#asset-management"             role="button">Asset Management</a>
-        <a class="nav-link" data-path="../policies/business-continuity-backup.md"   href="#business-continuity-backup"   role="button">Business Continuity &amp; Backup</a>
-        <a class="nav-link" data-path="../policies/data-classification-handling.md" href="#data-classification-handling" role="button">Data Classification &amp; Handling</a>
-        <a class="nav-link" data-path="../policies/incident-response.md"            href="#incident-response"            role="button">Incident Response</a>
-        <a class="nav-link" data-path="../policies/password-authentication.md"      href="#password-authentication"      role="button">Password &amp; Authentication</a>
-        <a class="nav-link" data-path="../policies/vendor-third-party-risk.md"      href="#vendor-third-party-risk"      role="button">Vendor &amp; Third-Party Risk</a>
+      <div class="ng"><div class="ng-lbl">Policies</div>
+        <a class="nl" data-src="policies/acceptable-use.md"                href="#acceptable-use">Acceptable Use</a>
+        <a class="nl" data-src="policies/access-management.md"             href="#access-management">Access Management</a>
+        <a class="nl" data-src="policies/asset-management.md"              href="#asset-management">Asset Management</a>
+        <a class="nl" data-src="policies/business-continuity-backup.md"    href="#business-continuity">Business Continuity &amp; Backup</a>
+        <a class="nl" data-src="policies/data-classification-handling.md"  href="#data-classification">Data Classification &amp; Handling</a>
+        <a class="nl" data-src="policies/incident-response.md"             href="#incident-response">Incident Response</a>
+        <a class="nl" data-src="policies/password-authentication.md"       href="#password-auth">Password &amp; Authentication</a>
+        <a class="nl" data-src="policies/vendor-third-party-risk.md"       href="#vendor-risk">Vendor &amp; Third-Party Risk</a>
       </div>
-
-      <!-- Control Mapping -->
-      <div class="nav-group" data-group="mapping">
-        <div class="nav-group-label">Control Mapping</div>
-        <a class="nav-link" data-path="../mapping/control-traceability-matrix.md" href="#control-traceability-matrix" role="button">Control Traceability Matrix</a>
-        <a class="nav-link" data-path="../mapping/ctm_audit_report.md"            href="#ctm-audit-report"            role="button">CTM Audit Report</a>
+      <div class="ng"><div class="ng-lbl">Control Mapping</div>
+        <a class="nl" data-src="mapping/control-traceability-matrix.md" href="#ctm">Control Traceability Matrix</a>
+        <a class="nl" data-src="mapping/ctm_audit_report.md"            href="#ctm-audit">CTM Audit Report</a>
       </div>
-
-      <!-- Governance Registers -->
-      <div class="nav-group" data-group="registers">
-        <div class="nav-group-label">Governance Registers</div>
-        <a class="nav-link" data-path="../register/exception-log.md"          href="#exception-log"          role="button">Exception Log</a>
-        <a class="nav-link" data-path="../register/review-cadence-tracker.md" href="#review-cadence-tracker" role="button">Review Cadence Tracker</a>
+      <div class="ng"><div class="ng-lbl">Governance Registers</div>
+        <a class="nl" data-src="register/exception-log.md"          href="#exception-log">Exception Log</a>
+        <a class="nl" data-src="register/review-cadence-tracker.md" href="#review-cadence">Review Cadence Tracker</a>
       </div>
-
-      <!-- Org Context -->
-      <div class="nav-group" data-group="context">
-        <div class="nav-group-label">Org Context</div>
-        <a class="nav-link" data-path="../context/org-profile.md" href="#org-profile" role="button">Organisation Profile</a>
+      <div class="ng"><div class="ng-lbl">Org Context</div>
+        <a class="nl" data-src="context/org-profile.md" href="#org-profile">Organisation Profile</a>
       </div>
-
-    </div><!-- /nav -->
-  </nav><!-- /sidebar -->
-
-  <!-- Main content area -->
-  <main id="main">
-    <div id="loader">Loading document…</div>
-    <div id="error-msg"></div>
-    <div id="content-wrap">
-      <article id="md-content"></article>
     </div>
+  </nav>
+
+  <main id="main">
+    <div id="loader">Loading…</div>
+    <div id="err"></div>
+    <div id="cw"><article id="md"></article></div>
   </main>
+</div>
 
-</div><!-- /layout -->
-
-<!-- Footer -->
-<footer id="site-footer">
+<footer id="ftr">
   PolicyForge — FinNexus Solutions Security Policy Suite &nbsp;&middot;&nbsp;
   <a href="https://github.com/dedsec-terminal/PolicyForge" target="_blank" rel="noopener">github.com/dedsec-terminal/PolicyForge</a>
-  &nbsp;&middot;&nbsp; Published via GitHub Pages
 </footer>
 
 <script>
-(function () {
+(function(){
   'use strict';
+  marked.setOptions({gfm:true,breaks:false,mangle:false,headerIds:false});
 
-  /* ── marked.js configuration ─────────────────────────────────── */
-  marked.setOptions({
-    gfm: true,
-    breaks: false,
-    mangle: false,
-    headerIds: false,
-  });
+  var links=Array.from(document.querySelectorAll('.nl'));
+  var md=document.getElementById('md');
+  var loader=document.getElementById('loader');
+  var err=document.getElementById('err');
+  var active=null;
 
-  /* ── DOM refs ─────────────────────────────────────────────────── */
-  var links       = Array.from(document.querySelectorAll('.nav-link'));
-  var mdContent   = document.getElementById('md-content');
-  var loader      = document.getElementById('loader');
-  var errorMsg    = document.getElementById('error-msg');
-  var searchInput = document.getElementById('search');
+  function setActive(l){if(active)active.classList.remove('active');active=l;l.classList.add('active')}
 
-  /* ── State ────────────────────────────────────────────────────── */
-  var activeLink = null;
-
-  /* ── Helpers ──────────────────────────────────────────────────── */
-  function setActive(link) {
-    if (activeLink) activeLink.classList.remove('active');
-    activeLink = link;
-    link.classList.add('active');
-  }
-
-  function showLoader() {
-    loader.classList.add('visible');
-    mdContent.innerHTML = '';
-    errorMsg.classList.remove('visible');
-    errorMsg.textContent = '';
-  }
-
-  function hideLoader() {
-    loader.classList.remove('visible');
-  }
-
-  function showError(msg) {
-    errorMsg.textContent = '\u26a0 ' + msg;
-    errorMsg.classList.add('visible');
-  }
-
-  /* Wrap <table> elements for horizontal scrolling on narrow screens */
-  function wrapTables(container) {
-    var tables = container.querySelectorAll('table');
-    tables.forEach(function (tbl) {
-      if (tbl.parentNode.classList && tbl.parentNode.classList.contains('table-wrap')) return;
-      var wrap = document.createElement('div');
-      wrap.className = 'table-wrap';
-      tbl.parentNode.insertBefore(wrap, tbl);
-      wrap.appendChild(tbl);
-    });
-  }
-
-  /* ── Load and render a markdown file ─────────────────────────── */
-  function loadDoc(path) {
-    showLoader();
+  function load(path){
+    loader.classList.add('v');
+    md.innerHTML='';
+    err.classList.remove('v');
     fetch(path)
-      .then(function (resp) {
-        if (!resp.ok) throw new Error('HTTP ' + resp.status + ' fetching ' + path);
-        return resp.text();
+      .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' — '+path);return r.text()})
+      .then(function(txt){
+        loader.classList.remove('v');
+        md.innerHTML=marked.parse(txt);
+        // wrap tables
+        md.querySelectorAll('table').forEach(function(t){
+          if(t.parentNode.classList.contains('tw'))return;
+          var w=document.createElement('div');w.className='tw';
+          t.parentNode.insertBefore(w,t);w.appendChild(t);
+        });
+        window.scrollTo(0,0);
       })
-      .then(function (raw) {
-        hideLoader();
-        var html = marked.parse(raw);
-        mdContent.innerHTML = html;
-        wrapTables(mdContent);
-        window.scrollTo(0, 0);
-      })
-      .catch(function (err) {
-        hideLoader();
-        showError(
-          'Could not load document: ' + err.message + '. ' +
-          'If viewing locally, serve files through an HTTP server (e.g. python -m http.server) ' +
-          'rather than opening index.html directly \u2014 browsers block fetch() on file:// URLs.'
-        );
+      .catch(function(e){
+        loader.classList.remove('v');
+        err.textContent='\u26a0 '+e.message;
+        err.classList.add('v');
       });
   }
 
-  /* ── Click handler ────────────────────────────────────────────── */
-  links.forEach(function (link) {
-    link.addEventListener('click', function (e) {
+  links.forEach(function(l){
+    l.addEventListener('click',function(e){
       e.preventDefault();
       setActive(this);
-      loadDoc(this.dataset.path);
-      history.replaceState(null, '', this.getAttribute('href'));
+      load(this.dataset.src);
+      history.replaceState(null,'',this.getAttribute('href'));
     });
   });
 
-  /* ── Search / filter ──────────────────────────────────────────── */
-  searchInput.addEventListener('input', function () {
-    var q = this.value.trim().toLowerCase();
-    links.forEach(function (link) {
-      var text = link.textContent.toLowerCase();
-      if (q === '' || text.includes(q)) {
-        link.classList.remove('hidden');
-      } else {
-        link.classList.add('hidden');
-      }
-    });
-    /* Hide group labels when all children are hidden */
-    document.querySelectorAll('.nav-group').forEach(function (group) {
-      var anyVisible = Array.from(group.querySelectorAll('.nav-link')).some(function (l) {
-        return !l.classList.contains('hidden');
-      });
-      group.style.display = anyVisible ? '' : 'none';
+  document.getElementById('s').addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase();
+    links.forEach(function(l){l.classList.toggle('hidden',q!==''&&!l.textContent.toLowerCase().includes(q))});
+    document.querySelectorAll('.ng').forEach(function(g){
+      g.style.display=Array.from(g.querySelectorAll('.nl')).some(function(l){return!l.classList.contains('hidden')})?'':'none';
     });
   });
 
-  /* ── Route on load: match URL hash to a link, else show README ── */
-  function routeOnLoad() {
-    var hash = window.location.hash.slice(1);
-    var target = null;
-    if (hash) {
-      target = links.find(function (l) {
-        return l.getAttribute('href') === '#' + hash;
-      });
-    }
-    if (!target) {
-      target = links.find(function (l) {
-        return l.dataset.path.endsWith('README.md');
-      });
-    }
-    if (target) {
-      setActive(target);
-      loadDoc(target.dataset.path);
-    }
+  function route(){
+    var h=window.location.hash.slice(1);
+    var t=h?links.find(function(l){return l.getAttribute('href')==='#'+h}):null;
+    if(!t)t=links.find(function(l){return l.dataset.src==='README.md'});
+    if(t){setActive(t);load(t.dataset.src)}
   }
-
-  routeOnLoad();
+  route();
 })();
 </script>
 </body>

@@ -1,32 +1,39 @@
-# PolicyForge: Enterprise Security Policy & Governance Suite
+# PolicyForge
 
-Welcome to **PolicyForge**. This repository demonstrates a complete, authored information security policy suite for a modern fintech organization—not just a collection of generic templates or a static document store. 
+**Enterprise Security Policy & Governance Suite for FinNexus Solutions**
 
-It showcases three core pillars of enterprise security management:
-1. **Authored Security Policy:** Custom-written policies tailored to a specific organizational profile and risk appetite.
-2. **Independent Control Traceability:** Rigorous mapping of internal controls to global frameworks (ISO/IEC 27001:2022, NIST CSF 2.0, PCI DSS v4.0.1, DPDPA 2025, and GDPR).
-3. **Operational Governance Lifecycle:** Active management of policy exceptions and review cadences to reflect a living security program.
+A complete, authored information security policy suite demonstrating three pillars of enterprise security management — not a collection of generic templates.
 
-## 📂 Repository Structure
+[![GitHub Pages](https://img.shields.io/badge/docs-live-6366f1?style=flat-square&logo=github)](https://dedsec-terminal.github.io/PolicyForge/)
 
-The repository is structured to reflect a real-world governance lifecycle:
+---
 
-* **[`/context`](file:///d:/PolicyForge/context/org-profile.md)** defines the organizational scope, risk profile, and operational baseline that inform the policies.
-* **[`/policies`](file:///d:/PolicyForge/policies/)** contains the authored control requirements (e.g., Access Management, Incident Response).
-* **[`/mapping`](file:///d:/PolicyForge/mapping/)** provides control traceability to external frameworks, including an independent audit of the mappings.
-* **[`/register`](file:///d:/PolicyForge/register/)** tracks operational governance, maintaining exception logs and review cadences.
+## What's in here
 
-## 📖 How to Read This Repository
+| Directory | Contents |
+|---|---|
+| [`/context`](context/org-profile.md) | Organisational profile, risk appetite, and operational baseline |
+| [`/policies`](policies/) | Eight authored control policies (Access, Incident Response, etc.) |
+| [`/mapping`](mapping/control-traceability-matrix.md) | Control Traceability Matrix — ISO 27001, NIST CSF, PCI DSS, DPDPA, GDPR |
+| [`/register`](register/) | Exception log and review cadence tracker |
+| [`/docs`](docs/index.html) | GitHub Pages source for the online documentation viewer |
 
-The power of this suite lies in its traceability. You can follow a specific requirement from the policy document directly to its regulatory justification. 
+## Three core pillars
 
-For example, open the [Control Traceability Matrix (CTM)](file:///d:/PolicyForge/mapping/control-traceability-matrix.md) to see how:
-* **PA-04** (from the Password & Authentication Policy) satisfies **PCI DSS v4.0.1 Requirement 8.3.9** regarding the deprecation of arbitrary time-based password expiration.
-* **IR-06** (from the Incident Response Policy) maps to **GDPR Articles 33 & 34** and **DPDPA Section 8(6)** to enforce mandatory regulatory breach notification timelines.
-* **AM-04** (from the Access Management Policy) satisfies **ISO/IEC 27001:2022 Control A.8.5** by enforcing MFA and deprecating SMS OTP for privileged access.
+1. **Authored security policy** — policies tailored to a specific organisational profile and risk appetite, not boilerplate.
+2. **Independent control traceability** — every internal control mapped to primary-source requirements across five frameworks, then independently audited in [`ctm_audit_report.md`](mapping/ctm_audit_report.md).
+3. **Operational governance lifecycle** — exception management and review cadences that reflect a living security program, not a point-in-time snapshot.
 
-## 🔍 Independent Audit & Real-World Governance
+## How to read this
 
-A robust compliance program does not assume its own mappings are flawless. Included in this repository is an **independent verification pass**: the [`ctm_audit_report.md`](file:///d:/PolicyForge/mapping/ctm_audit_report.md). This report independently verified the CTM mappings against primary-source standards, representing a deliberate governance and quality-assurance step.
+Follow a control end-to-end through the traceability chain:
 
-Finally, realistic policy programs always have ongoing alignment work. In the CTM's "Open Review Items," you will note that control **PA-10** (continuous monitoring of compromised credentials) remains flagged pending formal DPO/Legal sign-off regarding privacy implications. This reflects the reality of operational security governance, where technical controls must continuously negotiate with legal and privacy constraints before final ratification.
+- **PA-04** (Password Policy) → satisfies **PCI DSS v4.0.1 Req 8.3.9** on deprecating arbitrary time-based expiry
+- **IR-06** (Incident Response) → maps to **GDPR Art. 33/34** and **DPDPA s.8(6)** for mandatory breach notification
+- **AM-04** (Access Management) → satisfies **ISO 27001:2022 A.8.5** enforcing MFA and deprecating SMS OTP
+
+> Control **PA-10** (continuous monitoring of compromised credentials) is flagged open pending DPO/Legal sign-off — an intentional reflection of real-world governance where technical controls negotiate with privacy constraints before ratification.
+
+## Documentation viewer
+
+Browse all documents online: **[dedsec-terminal.github.io/PolicyForge](https://dedsec-terminal.github.io/PolicyForge/)**
