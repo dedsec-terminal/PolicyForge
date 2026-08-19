@@ -7,9 +7,9 @@
 | **Version**            | 1.0                                                              |
 | **Status**             | Active                                                           |
 | **Classification**     | Internal — Restricted                                            |
-| **Effective Date**     | 2026-08-19                                                       |
-| **Last Reviewed**      | 2026-08-19                                                       |
-| **Next Review Due**    | 2027-08-19                                                       |
+| **Effective Date**     | DD.MM.YY                                                       |
+| **Last Reviewed**      | DD.MM.YY                                                       |
+| **Next Review Due**    | DD.MM.YY                                                       |
 | **Policy Owner**       | CISO, FinNexus Solutions                                         |
 | **Approved By**        | Chief Information Security Officer (CISO), FinNexus Solutions    |
 | **Framework Alignment**| ISO/IEC 27001:2022 (A.5.29, A.5.30, A.8.13, A.8.14, A.8.24); NIST CSF 2.0 (PR.DS-11, RC.RP-01, RC.RP-03); PCI DSS v4.0.1 (Req 3.5, 10.7); DPDPA 2025 (Sec 8); GDPR (Art 32) |
@@ -175,7 +175,7 @@ All Tier 3 violations MUST be treated as critical risk events and reported immed
 | **Triggered Review Criteria** | Major migration to a new cloud provider; significant changes in core banking/financial regulatory uptime requirements; following the activation of the DRP during a real-world incident. |
 | **Policy Owner (Review Lead)** | CISO, FinNexus Solutions |
 | **Review Approver** | Legal and Compliance |
-| **Next Scheduled Review** | 2027-08-19 |
+| **Next Scheduled Review** | DD.MM.YY |
 
 ---
 
@@ -183,4 +183,4 @@ All Tier 3 violations MUST be treated as critical risk events and reported immed
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-08-19 | CISO, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| 1.0 | DD.MM.YY | CISO, FinNexus Solutions | Initial policy authored, reviewed, and approved. |

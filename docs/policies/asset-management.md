@@ -7,9 +7,9 @@
 | **Version**            | 1.0                                                              |
 | **Status**             | Active                                                           |
 | **Classification**     | Internal — Restricted                                            |
-| **Effective Date**     | 2026-08-19                                                       |
-| **Last Reviewed**      | 2026-08-19                                                       |
-| **Next Review Due**    | 2027-08-19                                                       |
+| **Effective Date**     | DD.MM.YY                                                       |
+| **Last Reviewed**      | DD.MM.YY                                                       |
+| **Next Review Due**    | DD.MM.YY                                                       |
 | **Policy Owner**       | IT Asset Manager, FinNexus Solutions                             |
 | **Approved By**        | Chief Information Security Officer (CISO), FinNexus Solutions    |
 | **Framework Alignment**| ISO/IEC 27001:2022 (A.5.9, A.5.10, A.8.1, A.8.9); NIST CSF 2.0 (ID.AM-01, ID.AM-02, ID.AM-03, ID.AM-04); PCI DSS v4.0.1 (Req 9.3); DPDPA 2025 (Sec 8); GDPR (Art 32) |
@@ -165,7 +165,7 @@ All Tier 3 violations involving lost or compromised assets MUST be treated as po
 | **Triggered Review Criteria**  | Major changes to FinNexus Solutions' physical footprint (e.g., opening a new headquarters); significant shifts in cloud provider strategy; after any Tier 3 violation involving asset loss or mismanagement. |
 | **Policy Owner (Review Lead)** | IT Asset Manager, FinNexus Solutions                                      |
 | **Review Approver**            | CISO                                                                      |
-| **Next Scheduled Review**      | 2027-08-19                                                                |
+| **Next Scheduled Review**      | DD.MM.YY                                                                |
 
 ---
 
@@ -173,4 +173,4 @@ All Tier 3 violations involving lost or compromised assets MUST be treated as po
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-08-19 | IT Asset Manager, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| 1.0 | DD.MM.YY | IT Asset Manager, FinNexus Solutions | Initial policy authored, reviewed, and approved. |

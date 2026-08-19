@@ -7,9 +7,9 @@
 | **Version** | 1.0 |
 | **Status** | Active |
 | **Classification** | Internal — General |
-| **Effective Date** | 2026-01-10 |
-| **Last Reviewed** | 2026-01-10 |
-| **Next Review Due** | 2027-01-10 |
+| **Effective Date** | DD.MM.YY |
+| **Last Reviewed** | DD.MM.YY |
+| **Next Review Due** | DD.MM.YY |
 | **Policy Owner** | Chief Information Security Officer (CISO), FinNexus Solutions |
 | **Approved By** | Chief Information Security Officer (CISO) & Human Resources Director, FinNexus Solutions |
 | **Framework Alignment** | ISO/IEC 27001:2022 (A.5.10, A.6.2, A.8.1); NIST CSF 2.0 (PR.AT-01, GV.PO-02); PCI DSS v4.0.1 (Req 12.1, 12.3, 12.6); DPDPA 2025 (Sec 8(5)); GDPR (Art 5, 32) |
@@ -208,7 +208,7 @@ All disciplinary actions under this policy MUST be documented by HR and reported
 | **Triggered Review Criteria** | Material changes in the regulatory landscape (new DPDPA rules, GDPR guidance); significant new technology adoption (e.g., enterprise GenAI platform rollout); a Tier 3 policy violation; major change in FinNexus Solutions' workforce composition or hybrid work model |
 | **Policy Owner (Review Lead)** | Chief Information Security Officer (CISO) |
 | **Review Approver** | CISO and Human Resources Director |
-| **Next Scheduled Review** | 2027-01-10 |
+| **Next Scheduled Review** | DD.MM.YY |
 
 ---
 
@@ -216,4 +216,4 @@ All disciplinary actions under this policy MUST be documented by HR and reported
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-01-10 | CISO, FinNexus Solutions | Initial policy drafted, reviewed, and approved. |
+| 1.0 | DD.MM.YY | CISO, FinNexus Solutions | Initial policy drafted, reviewed, and approved. |

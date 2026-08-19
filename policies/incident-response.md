@@ -7,9 +7,9 @@
 | **Version**            | 1.0                                                              |
 | **Status**             | Active                                                           |
 | **Classification**     | Internal — Restricted                                            |
-| **Effective Date**     | 2026-08-19                                                       |
-| **Last Reviewed**      | 2026-08-19                                                       |
-| **Next Review Due**    | 2027-08-19                                                       |
+| **Effective Date**     | DD.MM.YY                                                       |
+| **Last Reviewed**      | DD.MM.YY                                                       |
+| **Next Review Due**    | DD.MM.YY                                                       |
 | **Policy Owner**       | IT Security Lead, FinNexus Solutions                             |
 | **Approved By**        | Chief Information Security Officer (CISO), FinNexus Solutions    |
 | **Framework Alignment**| ISO/IEC 27001:2022 (A.5.24, A.5.25, A.5.26, A.5.27, A.5.28); NIST CSF 2.0 (RS.MA-02, RS.AN-03, RS.MA-03, RS.CO-02, RS.IM-01); PCI DSS v4.0.1 (Req 12.10); DPDPA 2025 (Sec 8); GDPR (Art 33, 34) |
@@ -165,7 +165,7 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 | **Triggered Review Criteria** | Following any SEV-1 incident; material changes to DPDPA or GDPR breach notification timelines; significant changes to FinNexus Solutions infrastructure or organizational structure. |
 | **Policy Owner (Review Lead)** | IT Security Lead, FinNexus Solutions |
 | **Review Approver** | CISO |
-| **Next Scheduled Review** | 2027-08-19 |
+| **Next Scheduled Review** | DD.MM.YY |
 
 ---
 
@@ -173,4 +173,4 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-08-19 | IT Security Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| 1.0 | DD.MM.YY | IT Security Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |

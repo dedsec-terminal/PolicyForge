@@ -127,7 +127,7 @@ The following prefixes are **already assigned** to authored policies. All new po
 | :--- | :--- | :--- | :--- |
 | `AM` | Access Management | AM-01 → AM-10 | `/policies/access-management.md` |
 | `AU` | Acceptable Use | AU-01 → AU-10 | `/policies/acceptable-use.md` |
-| `DC` | Data Classification & Handling | DC-01 → DC-11 | `/policies/data-classification-handling.md` |
+| `DC` | Data Classification & Handling | DC-01 → DC-11 | `[Data Classification & Handling](#data-classification)` |
 
 ### Reserved Prefixes (Assigned for Upcoming Policies)
 
@@ -149,7 +149,7 @@ These prefixes are reserved for the next five policies to be authored. Agents MU
 
 > **REFERENCE EXAMPLE — match this structure, tone, and specificity exactly.**
 >
-> The following is the full text of `/policies/data-classification-handling.md`, selected as the canonical reference policy for the PolicyForge suite. It represents the highest standard of specificity, org-grounding, cross-framework citation depth, and structural discipline among the three authored policies. Every subsequent policy MUST match this bar across all dimensions.
+> The following is the full text of `[Data Classification & Handling](#data-classification)`, selected as the canonical reference policy for the PolicyForge suite. It represents the highest standard of specificity, org-grounding, cross-framework citation depth, and structural discipline among the three authored policies. Every subsequent policy MUST match this bar across all dimensions.
 
 ---
 
@@ -162,9 +162,9 @@ These prefixes are reserved for the next five policies to be authored. Agents MU
 | **Version** | 1.0 |
 | **Status** | Active |
 | **Classification** | Internal — Restricted |
-| **Effective Date** | 2026-01-10 |
-| **Last Reviewed** | 2026-01-10 |
-| **Next Review Due** | 2027-01-10 |
+| **Effective Date** | DD.MM.YY |
+| **Last Reviewed** | DD.MM.YY |
+| **Next Review Due** | DD.MM.YY |
 | **Policy Owner** | Compliance Lead, FinNexus Solutions |
 | **Approved By** | Chief Information Security Officer (CISO) & Data Protection Officer (DPO), FinNexus Solutions |
 | **Framework Alignment** | ISO/IEC 27001:2022 (A.5.9, A.5.10, A.5.12, A.5.13, A.5.14); NIST CSF 2.0 (ID.AM-05, PR.DS-01, PR.DS-02, PR.DS-05); PCI DSS v4.0.1 (Req 3, 4, 9.4); DPDPA 2025 (Sec 4, 6, 8); GDPR (Art 5, 9, 25, 32) |
@@ -303,7 +303,7 @@ Production data — particularly Restricted data including customer PII and paym
 Where any use of production Restricted data in a non-production environment is approved as an exception:
 - The data MUST be pseudonymized or anonymized prior to use, and the anonymisation technique MUST be reviewed by the Compliance team to verify it meets the standards required under DPDPA 2025 and GDPR.
 - Access to the non-production environment containing that data MUST be restricted with controls equivalent to those applied in production.
-- The exception MUST be logged in `/register/exception-log.md` with the CISO's sign-off.
+- The exception MUST be logged in `[Exception Log](#exception-log)` with the CISO's sign-off.
 
 FinNexus Solutions Engineering teams MUST use synthetically generated or purpose-built test datasets for all standard development and testing activities.
 
@@ -372,7 +372,7 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 | **Triggered Review Criteria** | New product lines or data types introduced; material change in DPDPA rules or GDPR guidance (e.g., new SCCs, Data Protection Board guidance); PCI DSS version update affecting Req 3/4; following any Tier 3 violation or regulatory enquiry involving data classification |
 | **Policy Owner (Review Lead)** | Compliance Lead / Data Protection Officer (DPO) |
 | **Review Approver** | CISO |
-| **Next Scheduled Review** | 2027-01-10 |
+| **Next Scheduled Review** | DD.MM.YY |
 
 ---
 
@@ -380,4 +380,4 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-01-10 | Compliance Lead / DPO, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| 1.0 | DD.MM.YY | Compliance Lead / DPO, FinNexus Solutions | Initial policy authored, reviewed, and approved. |

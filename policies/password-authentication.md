@@ -7,9 +7,9 @@
 | **Version** | 1.0 |
 | **Status** | Active |
 | **Classification** | Internal — Restricted |
-| **Effective Date** | 2026-08-19 |
-| **Last Reviewed** | 2026-08-19 |
-| **Next Review Due** | 2027-08-19 |
+| **Effective Date** | DD.MM.YY |
+| **Last Reviewed** | DD.MM.YY |
+| **Next Review Due** | DD.MM.YY |
 | **Policy Owner** | IT Security Lead, FinNexus Solutions |
 | **Approved By** | Chief Information Security Officer (CISO), FinNexus Solutions |
 | **Framework Alignment** | ISO/IEC 27001:2022 (A.5.17, A.8.2, A.8.5, A.8.24); NIST CSF 2.0 (PR.AA-01, PR.DS-01); PCI DSS v4.0.1 (Req 8.2, 8.3, 8.4); DPDPA 2025 (Sec 8); GDPR (Art 32) |
@@ -160,7 +160,7 @@ All Tier 3 violations MUST be treated as potential security incidents and referr
 | **Triggered Review Criteria** | Major upgrade or replacement of the corporate identity provider; significant change in NIST digital identity guidelines (e.g., NIST SP 800-63); following a Tier 3 credential-related breach |
 | **Policy Owner (Review Lead)** | IT Security Lead, FinNexus Solutions |
 | **Review Approver** | CISO |
-| **Next Scheduled Review** | 2027-08-19 |
+| **Next Scheduled Review** | DD.MM.YY |
 
 ---
 
@@ -168,4 +168,4 @@ All Tier 3 violations MUST be treated as potential security incidents and referr
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-08-19 | IT Security Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| 1.0 | DD.MM.YY | IT Security Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |

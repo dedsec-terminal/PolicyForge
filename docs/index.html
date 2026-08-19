@@ -254,6 +254,24 @@
     });
   });
 
+  md.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (a && a.getAttribute('href')) {
+      var href = a.getAttribute('href');
+      // If it's a relative markdown link (e.g. "../register/exception-log.md" or "mapping/ctm_audit_report.md")
+      if (href.endsWith('.md') && !href.startsWith('http')) {
+        var filename = href.split('/').pop();
+        var targetLink = links.find(function(l) { return l.dataset.src.endsWith(filename); });
+        if (targetLink) {
+          e.preventDefault();
+          var hash = targetLink.getAttribute('href');
+          history.pushState(null, '', hash);
+          route();
+        }
+      }
+    }
+  });
+
   document.getElementById('s').addEventListener('input',function(){
     var q=this.value.trim().toLowerCase();
     links.forEach(function(l){l.classList.toggle('hidden',q!==''&&!l.textContent.toLowerCase().includes(q))});
@@ -268,6 +286,7 @@
     if(!t)t=links.find(function(l){return l.dataset.src==='README.md'});
     if(t){setActive(t);load(t.dataset.src)}
   }
+  window.addEventListener('hashchange', route);
   route();
 })();
 </script>

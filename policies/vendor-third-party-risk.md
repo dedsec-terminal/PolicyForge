@@ -7,9 +7,9 @@
 | **Version** | 1.0 |
 | **Status** | Active |
 | **Classification** | Internal — Restricted |
-| **Effective Date** | 2026-08-19 |
-| **Last Reviewed** | 2026-08-19 |
-| **Next Review Due** | 2027-08-19 |
+| **Effective Date** | DD.MM.YY |
+| **Last Reviewed** | DD.MM.YY |
+| **Next Review Due** | DD.MM.YY |
 | **Policy Owner** | Compliance Lead, FinNexus Solutions |
 | **Approved By** | Chief Information Security Officer (CISO), FinNexus Solutions |
 | **Framework Alignment** | ISO/IEC 27001:2022 (A.5.19, A.5.20, A.5.21, A.5.22); NIST CSF 2.0 (GV.SC-04, GV.SC-06, GV.SC-07); PCI DSS v4.0.1 (Req 12.8.1, 12.8.2, 12.8.3, 12.8.4, 12.8.5); DPDPA 2025 (Sec 8(1), 8(2), 8(6)); GDPR (Art 28, 33) |
@@ -164,7 +164,7 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 | **Triggered Review Criteria** | Identification of a systemic supply chain vulnerability (e.g., Log4j-style event); significant changes to DPDPA 2025 rules regarding data fiduciaries; a Tier 3 policy violation involving a third party |
 | **Policy Owner (Review Lead)** | Compliance Lead, FinNexus Solutions |
 | **Review Approver** | CISO |
-| **Next Scheduled Review** | 2027-08-19 |
+| **Next Scheduled Review** | DD.MM.YY |
 
 ---
 
@@ -172,4 +172,4 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-08-19 | Compliance Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |
+| 1.0 | DD.MM.YY | Compliance Lead, FinNexus Solutions | Initial policy authored, reviewed, and approved. |

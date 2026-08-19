@@ -7,9 +7,9 @@
 | **Version** | 1.0 |
 | **Status** | Active |
 | **Classification** | Internal — Restricted |
-| **Effective Date** | 2026-01-10 |
-| **Last Reviewed** | 2026-01-10 |
-| **Next Review Due** | 2027-01-10 |
+| **Effective Date** | DD.MM.YY |
+| **Last Reviewed** | DD.MM.YY |
+| **Next Review Due** | DD.MM.YY |
 | **Policy Owner** | IT Security Lead, FinNexus Solutions |
 | **Approved By** | Chief Information Security Officer (CISO), FinNexus Solutions |
 | **Framework Alignment** | ISO/IEC 27001:2022 (A.5.15–A.5.18, A.8.2–A.8.5); NIST CSF 2.0 (PR.AA-01 to PR.AA-06); PCI DSS v4.0.1 (Req 7, 8); DPDPA 2025 (Sec 8(5)); GDPR (Art 5(1)(f), 32) |
@@ -57,7 +57,7 @@ Access to all FinNexus Solutions systems MUST be provisioned only upon receipt o
 
 ### AM-03 — Unique User Identification
 
-Every individual who accesses any FinNexus Solutions system MUST be assigned a unique user identifier (User ID). Shared or generic accounts (e.g., `admin`, `test`, `shared-team-login`) are strictly prohibited in all production, staging, and corporate IT environments. This requirement extends to service accounts and machine identities; each service or automated process MUST operate under a dedicated, uniquely named identity. Where legacy systems technically cannot support unique accounts, an approved exception (see `/register/exception-log.md`) with compensating controls MUST be in place.
+Every individual who accesses any FinNexus Solutions system MUST be assigned a unique user identifier (User ID). Shared or generic accounts (e.g., `admin`, `test`, `shared-team-login`) are strictly prohibited in all production, staging, and corporate IT environments. This requirement extends to service accounts and machine identities; each service or automated process MUST operate under a dedicated, uniquely named identity. Where legacy systems technically cannot support unique accounts, an approved exception (see `[Exception Log](#exception-log)`) with compensating controls MUST be in place.
 
 > **Framework Mapping:** ISO 27001:2022 A.5.16; NIST CSF PR.AA-02; PCI DSS v4.0.1 Req 8.2.1; DPDPA Sec 8(5)
 
@@ -199,7 +199,7 @@ All violations MUST be documented and reported to the CISO. Violations that may 
 | **Triggered Review Criteria** | Major cloud infrastructure change; material organizational restructuring; significant access-related security incident; new or amended regulatory requirement (PCI DSS, DPDPA, GDPR) |
 | **Policy Owner (Review Lead)** | IT Security Lead |
 | **Review Approver** | CISO |
-| **Next Scheduled Review** | 2027-01-10 |
+| **Next Scheduled Review** | DD.MM.YY |
 
 ---
 
@@ -207,4 +207,4 @@ All violations MUST be documented and reported to the CISO. Violations that may 
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | 2026-01-10 | IT Security Lead | Initial policy draft authored and approved. |
+| 1.0 | DD.MM.YY | IT Security Lead | Initial policy draft authored and approved. |

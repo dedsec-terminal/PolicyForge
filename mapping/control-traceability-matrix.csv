@@ -1,7 +1,7 @@
 Safeguard ID,Policy,Safeguard Summary,ISO 27001 Ref,NIST CSF Ref,PCI DSS Ref,DPDPA Ref,GDPR Ref,Notes
 AM-01,access-management,Least privilege and need-to-know; no wildcard permissions in production,"A.5.15, A.8.2",PR.AA-05,Req 7.2,Sec 8(5),—,Cross-ref: DC-03 (Restricted data access)
 AM-02,access-management,Formal written access requests with manager approval before provisioning,A.5.18,PR.AA-01,Req 7.2.2,—,Art 32,—
-AM-03,access-management,Unique user IDs mandatory; shared/generic accounts prohibited,A.5.16,PR.AA-02,Req 8.2.1,Sec 8(5),—,Exception process references /register/exception-log.md
+AM-03,access-management,Unique user IDs mandatory; shared/generic accounts prohibited,A.5.16,PR.AA-02,Req 8.2.1,Sec 8(5),—,Exception process references [Exception Log](#exception-log)
 AM-04,access-management,"MFA mandatory for VPN, CDE, cloud consoles, CI/CD; FIDO2/TOTP required; SMS OTP deprecated for privileged",A.8.5,PR.AA-03,"Req 8.4, 8.5",—,Art 32(1)(b),Cross-ref: PA-01 (authentication standards)
 AM-05,access-management,"Password standards: 14-char standard, 20-char privileged, 12-history, 10-attempt lockout, no default credentials, secrets in vault",A.5.17,PR.AA-02,"Req 8.3, 8.6",—,Art 32,Superseded in detail by PA policy; cross-ref PA-02–PA-06
 AM-06,access-management,Quarterly recertification for CDE/production; semi-annual for corporate IT; revocation within 5 business days,A.5.18,PR.AA-05,"Req 7.2.4, 7.2.5",—,Art 5(1)(f),—
@@ -27,7 +27,7 @@ DC-05,data-classification-handling,Internal data: FinNexus personnel only; no ex
 DC-06,data-classification-handling,Public data: free distribution only after formal approval through DC-01; Marketing/Legal control external publishing,A.5.12,ID.AM-05,—,—,—,—
 DC-07,data-classification-handling,Data minimization: collect only what's required; PIA for new personal data fields; retention schedule mandatory,"A.5.9, A.8.10",PR.DS-01,Req 3.2,"Sec 4, 8(7)","Art 5(1)(c), 5(1)(e)",DPDPA purpose limitation; GDPR data minimization
 DC-08,data-classification-handling,Secure disposal: crypto-shredding or NIST SP 800-88 wipe for digital; cross-cut shred + CoD for physical; hardware cleared before reuse,A.8.10,PR.DS-03,"Req 3.2, 9.4.6",Sec 8(7),"Art 5(1)(e), 17",—
-DC-09,data-classification-handling,"Production Restricted data prohibited in dev/test without CISO+Compliance approval, anonymization, and exception log entry",A.8.31,PR.DS-01,Req 3.3.2,"Sec 6, 8","Art 25, 32",Exception references /register/exception-log.md
+DC-09,data-classification-handling,"Production Restricted data prohibited in dev/test without CISO+Compliance approval, anonymization, and exception log entry",A.8.31,PR.DS-01,Req 3.3.2,"Sec 6, 8","Art 25, 32",Exception references [Exception Log](#exception-log)
 DC-10,data-classification-handling,Cross-border transfers: DPDPA permissible country list or contractual mechanism; GDPR Chapter V SCCs required,A.5.14,GV.SC-07,—,Sec 16,Art 44–49,Dual-jurisdiction transfer control
 DC-11,data-classification-handling,"Special category data (Aadhaar, PAN, biometrics, GDPR Art 9 data): field-level encryption, audit logging, DPO approval for collection","A.5.12, A.8.24",PR.DS-01,—,Sec 8,"Art 9, 35",KYC/AML fintech relevance
 IR-01,incident-response,All personnel must report suspected incidents within 2 hours; no self-remediation without IT Security authorization,A.5.24,RS.MA-02,Req 12.10.1,—,—,—
@@ -35,7 +35,7 @@ IR-02,incident-response,"Triage and classify SEV level: within 1 hr for SEV-1/2,
 IR-03,incident-response,"Containment within 2 hrs of SEV-1 classification; authorized to isolate endpoints, revoke credentials, suspend services",A.5.26,RS.MA-03,Req 12.10.1,—,—,—
 IR-04,incident-response,Evidence preservation: do not alter logs/images; take forensic snapshots before eradication,A.5.28,RS.AN-03,Req 12.10.1,—,—,Chain-of-custody requirement implied
 IR-05,incident-response,"Eradication and recovery: root cause eliminated, CISO approves recovery plan, 14-day enhanced monitoring post-recovery",A.5.27,RS.MA-04,Req 12.10.1,—,—,—
-IR-06,incident-response,Regulatory breach notification: DPDPA Board without undue delay; GDPR supervisory authority within 72 hrs; IT provides technical details within 24 hrs,A.5.24,RS.CO-02,—,Sec 8(6),"Art 33, 34",NIST CSF mapping is Review — RS.CO-03 plausible but not cited
+IR-06,incident-response,Regulatory breach notification: DPDPA Board without undue delay; GDPR supervisory authority within 72 hrs; IT provides technical details within 24 hrs,A.5.24,RS.CO-02,—,Sec 8(6),"Art 33, 34",—
 IR-07,incident-response,External communications: only authorized spokespersons; all statements reviewed by Legal; no staff social media disclosure,A.5.24,RS.CO-02,—,—,—,—
 IR-08,incident-response,"Post-Incident Review within 5 business days of SEV-1/2 closure; root cause, timeline, lessons learned, distributed to CISO/Engineering/Legal",A.5.27,RS.IM-01,Req 12.10.6,—,—,—
 IR-09,incident-response,"Annual tabletop exercise; involves IT Security, Engineering, Legal, HR; lessons incorporated within 30 days",A.5.25,RS.CO-01,Req 12.10.2,—,—,—
@@ -44,10 +44,10 @@ VR-01,vendor-third-party-risk,"Centralized vendor inventory in VMS; records risk
 VR-02,vendor-third-party-risk,Pre-procurement risk assessment required for Tier 1/2 vendors; no contract until CISO-approved,A.5.21,GV.SC-06,Req 12.8.3,—,—,—
 VR-03,vendor-third-party-risk,Tier 1 vendors must supply SOC 2 Type II / ISO 27001 cert / PCI AOC or complete SIG questionnaire,A.5.21,GV.SC-06,Req 12.8.4,—,—,—
 VR-04,vendor-third-party-risk,DPA required for vendors processing personal data; cardholder data vendors acknowledge PCI DSS Req 12.8.2 responsibility,A.5.20,GV.SC-07,Req 12.8.2,Sec 8(2),Art 28,Cross-ref: AM-09 (vendor access)
-VR-05,vendor-third-party-risk,Right to Audit clause in all Tier 1 contracts; Compliance Lead may invoke proactively on failed certifications,A.5.22,GV.SC-06,"Req 12.8.2, 12.8.4",—,Art 28(3)(h),PCI DSS mapping is Review — Req 12.9 plausible
+VR-05,vendor-third-party-risk,Right to Audit clause in all Tier 1 contracts; Compliance Lead may invoke proactively on failed certifications,A.5.22,GV.SC-06,"Req 12.8.2, 12.8.4",—,Art 28(3)(h),—
 VR-06,vendor-third-party-risk,Tier 1 vendors re-assessed annually; Tier 2 biennially; verify security posture and least-privilege access,A.5.22,GV.SC-06,Req 12.8.4,—,—,—
 VR-07,vendor-third-party-risk,Vendor breach notification to FinNexus within 24 hrs; IT Security integrates into IR plan; Legal directs regulatory notifications,A.5.22,GV.SC-06,—,Sec 8(6),Art 33(2),Cross-ref: IR-10
-VR-08,vendor-third-party-risk,Vendor offboarding: access revoked within 4 hrs; Certificate of Destruction for Restricted/Confidential data within 30 days,"A.5.22, A.8.10",ID.AM-08,Req 12.8.5,Sec 8(7),Art 28(3)(g),NIST CSF mapping is Review — PR.DS-03 plausible
+VR-08,vendor-third-party-risk,Vendor offboarding: access revoked within 4 hrs; Certificate of Destruction for Restricted/Confidential data within 30 days,"A.5.22, A.8.10",ID.AM-08,Req 12.8.5,Sec 8(7),Art 28(3)(g),—
 VR-09,vendor-third-party-risk,Sub-processors require FinNexus written approval; Tier 1 vendors maintain sub-processor list; primary vendor liable for sub-processor failures,A.5.20,GV.SC-07,—,—,"Art 28(2), 28(4)",—
 VR-10,vendor-third-party-risk,Software supply chain: CI/CD blocks CVSS 7.0+ components; API connections require TLS 1.2+ and OAuth 2.0/mTLS,"A.8.30, A.8.32, A.5.21",GV.SC-06,Req 6.3.2,—,—,—
 PA-01,password-authentication,MFA mandatory for all interactive access; FIDO2/WebAuthn or TOTP required; SMS/voice OTP deprecated,A.8.5,PR.AA-01,Req 8.4.2,—,—,Cross-ref: AM-04
@@ -76,9 +76,9 @@ BC-02,business-continuity-backup,"Backup schedules: Tier 1 every 15 min, 30-day 
 BC-03,business-continuity-backup,"All backups: AES-256 at rest, TLS 1.2+/1.3 in transit; KMS physically and logically separated from backup storage",A.8.24,PR.DS-01,Req 3.5,—,Art 32,—
 BC-04,business-continuity-backup,Tier 1 and 2 backups in WORM immutable storage for first 30 days; auto-replicated to geographically separate cloud region,A.8.13,PR.DS-11,—,—,Art 32(1)(c),Ransomware resilience control
 BC-05,business-continuity-backup,"Restoration testing: Tier 1 quarterly, Tier 2 semi-annually; verify recoverability within RTO; results reviewed by IT Security Lead","A.5.30, A.8.13",RC.RP-03,Req 10.7.3,—,—,—
-BC-06,business-continuity-backup,Tier 1 platforms: Multi-AZ with active-active or auto active-passive failover; single-zone failure cannot exceed 4-hr RTO,A.8.14,PR.IR-03,—,—,—,Review — NIST PR.DS-11 is backup-focused; PR.PT-05 or RC.RP-01 may be more precise for HA
+BC-06,business-continuity-backup,Tier 1 platforms: Multi-AZ with active-active or auto active-passive failover; single-zone failure cannot exceed 4-hr RTO,A.8.14,PR.IR-03,—,—,—,—
 BC-07,business-continuity-backup,DRP documented for Tier 1/2; updated annually or within 30 days of major infra change; includes IR contacts and manual fallbacks,A.5.30,RC.RP-01,—,—,—,—
-BC-08,business-continuity-backup,Alternate workspace: redundant load-balanced VPN gateways; critical personnel issued failover-configured laptops,A.5.30,"PR.IR-03, PR.AA-05",—,—,—,PR.AC-03 is from NIST CSF 1.1; verify in CSF 2.0 — PR.AA or RC.RP may be more current
+BC-08,business-continuity-backup,Alternate workspace: redundant load-balanced VPN gateways; critical personnel issued failover-configured laptops,A.5.30,"PR.IR-03, PR.AA-05",—,—,—,—
 BC-09,business-continuity-backup,"Bi-annual tabletop exercise; simulates ransomware or cloud region failure; lessons in risk register, remediated within 90 days",A.5.30,RC.RP-03,—,Sec 8,—,—
 BC-10,business-continuity-backup,"Tier 1 vendors contractually required: 99.9% uptime SLA, compliant DRP; reviewed in annual vendor risk cycle","A.5.21, A.5.22",GV.SC-06,—,—,—,Cross-ref: VR-06 (vendor re-assessment)
 BC-11,business-continuity-backup,Declared disaster: CISO notifies internal stakeholders and Board within 1 hr; Legal engaged immediately if Restricted data/funds affected,A.5.24,RC.CO-03,—,Sec 8(6),Art 33,Cross-ref: IR-06 (regulatory notification)
