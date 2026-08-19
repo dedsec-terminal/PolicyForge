@@ -14,7 +14,7 @@ This document defines the foundational organizational context, structure, and ri
 
 Due to its global operations and the nature of its business, FinNexus Solutions is subject to multiple regulatory frameworks:
 
-- **India:** Digital Personal Data Protection Act (DPDPA), RBI guidelines for payment/financial institutions.
+- **India:** Digital Personal Data Protection Act (DPDP Act 2023), RBI guidelines for payment/financial institutions.
 - **European Union:** General Data Protection Regulation (GDPR).
 - **United States:** Various state privacy laws (e.g., CCPA/CPRA) and federal financial regulations.
 - **Industry Standards:** Payment Card Industry Data Security Standard (PCI DSS) due to processing and storing payment card data.
@@ -34,7 +34,7 @@ The organization is structured to ensure segregation of duties and robust govern
 - **Chief Information Security Officer (CISO):** Responsible for the overall security strategy, policy enforcement, and risk management. 
 - **Information Technology (IT):** Manages internal systems, employee endpoints, network infrastructure, and helpdesk operations.
 - **Engineering / Product Development:** Develops and maintains the core financial applications and customer-facing platforms.
-- **Legal and Compliance:** Ensures all operations, products, and policies adhere to relevant laws (DPDPA, GDPR, etc.) and industry regulations.
+- **Legal and Compliance:** Ensures all operations, products, and policies adhere to relevant laws (DPDP Act 2023, GDPR, etc.) and industry regulations.
 - **Human Resources (HR):** Manages employee onboarding, offboarding, background checks, and coordinates security awareness training.
 
 ## 5. Infrastructure and Operational Assumptions

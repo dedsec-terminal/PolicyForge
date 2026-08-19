@@ -58,7 +58,7 @@ The following activities are strictly prohibited on all FinNexus Solutions techn
 - **e. Credential sharing:** Sharing login credentials, passwords, one-time passcodes, or MFA devices with any other individual, including colleagues.
 - **f. Malicious code:** Introducing, distributing, or executing malware, ransomware, spyware, cryptocurrency mining software, or any program designed to damage, disrupt, or compromise FinNexus Solutions systems.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.10, A.8.1; NIST CSF PR.AT-01, PR.DS-05; PCI DSS v4.0.1 Req 12.3; DPDPA Sec 8(5); GDPR Art 5, 32
+> **Framework Mapping:** ISO 27001:2022 A.5.10, A.8.1; NIST CSF PR.AT-01, PR.DS-05; PCI DSS v4.0.1 Req 12.3; DPDP Act 2023 Sec 8(5); GDPR Art 5, 32
 
 ---
 
@@ -100,7 +100,7 @@ FinNexus Solutions provides email (corporate domain) and approved collaboration 
 - MUST NOT use collaboration tools (Slack, Teams, etc.) to share credentials, private keys, API keys, or any secrets - even in direct messages with colleagues.
 - Be aware that all communications conducted via FinNexus Solutions corporate systems may be subject to monitoring and retention for audit, regulatory compliance, and legal purposes, as further described in AU-09.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.10, A.8.23; NIST CSF PR.AT-01; PCI DSS v4.0.1 Req 12.6; DPDPA Sec 8(5); GDPR Art 32
+> **Framework Mapping:** ISO 27001:2022 A.5.10, A.8.23; NIST CSF PR.AT-01; PCI DSS v4.0.1 Req 12.6; DPDP Act 2023 Sec 8(5); GDPR Art 32
 
 ---
 
@@ -129,7 +129,7 @@ Given FinNexus Solutions' high-risk data environment - spanning customer PII, pa
 - Engineering personnel using AI-assisted coding tools MUST ensure no secrets, API keys, or production credentials are present in any code submitted to an AI tool. AI-generated code that will be merged into production repositories MUST undergo standard security review as required by the Secure SDLC Policy.
 - FinNexus Solutions will maintain an approved AI tools register, reviewed annually by the CISO and Legal/Compliance team.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.10, A.8.1; NIST CSF GV.PO-02, PR.DS-05; PCI DSS v4.0.1 Req 12.3; DPDPA Sec 6, 8; GDPR Art 5(1)(b), 25
+> **Framework Mapping:** ISO 27001:2022 A.5.10, A.8.1; NIST CSF GV.PO-02, PR.DS-05; PCI DSS v4.0.1 Req 12.3; DPDP Act 2023 Sec 6, 8; GDPR Art 5(1)(b), 25
 
 ---
 
@@ -142,7 +142,7 @@ FinNexus Solutions operates on public cloud infrastructure (AWS/Azure/GCP), and 
 - MUST NOT make cloud storage buckets, object stores, or repositories containing FinNexus Solutions data publicly accessible - even temporarily - without explicit written sign-off from the IT Security Lead and CISO.
 - Ensure that any bulk data export from FinNexus Solutions production systems is logged and subject to the Data Classification Policy requirements for the sensitivity of the data being moved.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.10, A.5.12; NIST CSF PR.DS-01, PR.DS-05; PCI DSS v4.0.1 Req 9.4; DPDPA Sec 8(5); GDPR Art 5(1)(f), 32
+> **Framework Mapping:** ISO 27001:2022 A.5.10, A.5.12; NIST CSF PR.DS-01, PR.DS-05; PCI DSS v4.0.1 Req 9.4; DPDP Act 2023 Sec 8(5); GDPR Art 5(1)(f), 32
 
 ---
 
@@ -151,12 +151,12 @@ FinNexus Solutions operates on public cloud infrastructure (AWS/Azure/GCP), and 
 Personnel using FinNexus Solutions technology resources should be aware that:
 
 - FinNexus Solutions reserves the right to monitor, log, inspect, and audit activity conducted on its networks, systems, devices, and communication platforms. This includes internet usage, email content, file transfers, cloud access logs, and endpoint activity.
-- Monitoring is conducted for purposes of security incident detection, regulatory compliance (PCI DSS, DPDPA, GDPR), legal hold obligations, and policy enforcement - and NOT for general surveillance of personal activities.
+- Monitoring is conducted for purposes of security incident detection, regulatory compliance (PCI DSS, DPDP Act 2023, GDPR), legal hold obligations, and policy enforcement - and NOT for general surveillance of personal activities.
 - Personnel have no expectation of personal privacy with respect to data stored on or transmitted through FinNexus Solutions-owned systems or corporate accounts.
 - Any monitoring that intersects with personal data belonging to FinNexus Solutions employees will be governed by FinNexus Solutions' Employee Privacy Notice, maintained by HR and Legal/Compliance in compliance with DPDP Act 2023 consent and transparency requirements.
 - The use of FinNexus Solutions systems constitutes implicit acknowledgement of and consent to this monitoring policy.
 
-> **Framework Mapping:** ISO 27001:2022 A.8.16, A.5.10; NIST CSF DE.CM-03; PCI DSS v4.0.1 Req 10.1; DPDPA Sec 6 (Consent), 8(5); GDPR Art 5, 6(1)(f)
+> **Framework Mapping:** ISO 27001:2022 A.8.16, A.5.10; NIST CSF DE.CM-03; PCI DSS v4.0.1 Req 10.1; DPDP Act 2023 Sec 6 (Consent), 8(5); GDPR Art 5, 6(1)(f)
 
 ---
 
@@ -170,7 +170,7 @@ All FinNexus Solutions personnel have an obligation to report known or suspected
 
 FinNexus Solutions operates a strict non-retaliation policy: no personnel who reports a genuine concern in good faith will face adverse employment action as a consequence of that report. Deliberate false reporting, however, is itself a policy violation. Individuals who suspect that a violation may constitute a personal data breach under DPDP Act 2023 or GDPR are directed to immediately contact the Legal and Compliance team to initiate breach notification assessment procedures.
 
-> **Framework Mapping:** ISO 27001:2022 A.6.4, A.5.24; NIST CSF RS.CO-02; PCI DSS v4.0.1 Req 12.1; DPDPA Sec 8(6); GDPR Art 33
+> **Framework Mapping:** ISO 27001:2022 A.6.4, A.5.24; NIST CSF RS.CO-02; PCI DSS v4.0.1 Req 12.1; DPDP Act 2023 Sec 8(6); GDPR Art 33
 
 ---
 
@@ -178,11 +178,11 @@ FinNexus Solutions operates a strict non-retaliation policy: no personnel who re
 
 | Role | Responsibilities Under This Policy |
 | :--- | :--- |
-| **CISO** | Ultimate policy owner; approves AI tools register and exceptions; receives escalated violation reports; ensures alignment with regulatory obligations under DPDPA, GDPR, and PCI DSS. |
+| **CISO** | Ultimate policy owner; approves AI tools register and exceptions; receives escalated violation reports; ensures alignment with regulatory obligations under DPDP Act 2023, GDPR, and PCI DSS. |
 | **IT Security Team** | Enforces technical controls supporting this policy (DLP, endpoint monitoring, cloud access controls); investigates suspected violations; maintains the approved software and AI tools registers. |
 | **IT Operations / Helpdesk** | Issues and configures company devices per AU-06 standards; manages MDM enrolment; receives and acts on lost/stolen device reports; advises personnel on authorized tools. |
 | **Human Resources** | Communicates this policy during onboarding and upon material updates; administers the disciplinary process for violations; maintains Employee Privacy Notice aligned with AU-09. |
-| **Legal and Compliance** | Advises on legal risk arising from violations; leads data breach notification assessment where violations involve customer data; ensures monitoring activities comply with DPDPA and GDPR. |
+| **Legal and Compliance** | Advises on legal risk arising from violations; leads data breach notification assessment where violations involve customer data; ensures monitoring activities comply with DPDP Act 2023 and GDPR. |
 | **Engineering / Product Development** | Adheres to AI-assisted coding restrictions (AU-07); ensures no production data or credentials are used in non-approved tooling; reports any discovered misuse of data handling in development pipelines. |
 | **All Employees, Contractors, and Third-Party Personnel** | Read, understand, and sign acceptance of this policy upon commencement. Conduct all use of FinNexus Solutions resources in accordance with the standards defined herein. Report violations promptly (AU-10). |
 
@@ -205,7 +205,7 @@ All disciplinary actions under this policy MUST be documented by HR and reported
 | Attribute | Details |
 | :--- | :--- |
 | **Standard Review Frequency** | Annual (every 12 months from effective date) |
-| **Triggered Review Criteria** | Material changes in the regulatory landscape (new DPDPA rules, GDPR guidance); significant new technology adoption (e.g., enterprise GenAI platform rollout); a Tier 3 policy violation; major change in FinNexus Solutions' workforce composition or hybrid work model |
+| **Triggered Review Criteria** | Material changes in the regulatory landscape (new DPDP Rules 2025, GDPR guidance); significant new technology adoption (e.g., enterprise GenAI platform rollout); a Tier 3 policy violation; major change in FinNexus Solutions' workforce composition or hybrid work model |
 | **Policy Owner (Review Lead)** | Chief Information Security Officer (CISO) |
 | **Review Approver** | CISO and Human Resources Director |
 | **Next Scheduled Review** | DD.MM.YY |

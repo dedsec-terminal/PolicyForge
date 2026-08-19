@@ -43,7 +43,7 @@ This policy does not govern physical access controls (covered by the Physical Se
 
 All access rights granted to FinNexus Solutions personnel, service accounts, and third parties MUST be provisioned on the principle of least privilege. Access MUST be scoped to the minimum permissions required to fulfil a defined, business-approved role or task. Broad, wildcard, or owner-level permissions (e.g., `*:*`, `AdministratorAccess` policies in AWS) MUST NOT be granted to any human user in a production environment without explicit, time-boxed CISO approval and a documented business justification. Engineering teams MUST NOT share application-level credentials across services where individual service identities are technically feasible.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.15, A.8.2; NIST CSF PR.AA-05; PCI DSS v4.0.1 Req 7.2; DPDPA Sec 8(5)
+> **Framework Mapping:** ISO 27001:2022 A.5.15, A.8.2; NIST CSF PR.AA-05; PCI DSS v4.0.1 Req 7.2; DPDP Act 2023 Sec 8(5)
 
 ---
 
@@ -59,7 +59,7 @@ Access to all FinNexus Solutions systems MUST be provisioned only upon receipt o
 
 Every individual who accesses any FinNexus Solutions system MUST be assigned a unique user identifier (User ID). Shared or generic accounts (e.g., `admin`, `test`, `shared-team-login`) are strictly prohibited in all production, staging, and corporate IT environments. This requirement extends to service accounts and machine identities; each service or automated process MUST operate under a dedicated, uniquely named identity. Where legacy systems technically cannot support unique accounts, an approved exception (see [Exception Log](#exception-log)) with compensating controls MUST be in place.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.16; NIST CSF PR.AA-02; PCI DSS v4.0.1 Req 8.2.1; DPDPA Sec 8(5)
+> **Framework Mapping:** ISO 27001:2022 A.5.16; NIST CSF PR.AA-02; PCI DSS v4.0.1 Req 8.2.1; DPDP Act 2023 Sec 8(5)
 
 ---
 
@@ -132,7 +132,7 @@ Human Resources MUST notify the IT Security team no later than the end of an emp
 
 Access revocation completion MUST be confirmed in writing to HR and documented in the offboarding record. The IT Security Lead MUST verify revocation as part of the next quarterly access review cycle.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.18, A.6.5; NIST CSF PR.AA-05; PCI DSS v4.0.1 Req 8.3.4; DPDPA Sec 8(5)
+> **Framework Mapping:** ISO 27001:2022 A.5.18, A.6.5; NIST CSF PR.AA-05; PCI DSS v4.0.1 Req 8.3.4; DPDP Act 2023 Sec 8(5)
 
 ---
 
@@ -147,7 +147,7 @@ All third-party vendors, SaaS providers, and managed service partners granted ac
 
 The vendor risk management process and corresponding agreements (MSAs/DPAs) are governed by the Third-Party & Vendor Risk Management Policy.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.19, A.5.20; NIST CSF GV.SC-07, PR.AA-05; PCI DSS v4.0.1 Req 8.2.1, 12.8; GDPR Art 28; DPDPA Sec 8(2)
+> **Framework Mapping:** ISO 27001:2022 A.5.19, A.5.20; NIST CSF GV.SC-07, PR.AA-05; PCI DSS v4.0.1 Req 8.2.1, 12.8; GDPR Art 28; DPDP Act 2023 Sec 8(2)
 
 ---
 
@@ -174,7 +174,7 @@ Service accounts and machine identities (API keys, OAuth 2.0 client credentials,
 | **IT Operations / Helpdesk** | Executes access provisioning and revocation requests as directed by IT Security; enforces account lockout and MFA enrolment for all FinNexus Solutions staff. |
 | **Engineering / Product Development** | Responsible for implementing least-privilege IAM roles in cloud environments and CI/CD systems; enforces secrets management standards (AM-05); onboards service accounts to PAM tooling (AM-10). |
 | **Human Resources** | Initiates access provisioning upon hire and triggers access revocation upon employee or contractor separation as per AM-08 timelines. |
-| **Legal and Compliance** | Ensures vendor access agreements (DPAs/MSAs) reflect access control obligations; validates GDPR/DPDPA Article 32 compliance during access-related audits. |
+| **Legal and Compliance** | Ensures vendor access agreements (DPAs/MSAs) reflect access control obligations; validates GDPR Article 32 / DPDP Act 2023 compliance during access-related audits. |
 | **All Employees and Contractors** | Responsible for maintaining the confidentiality of their own credentials; must not share access credentials with any other individual; must report suspected account compromise immediately to IT Security. |
 
 ---
@@ -196,7 +196,7 @@ All violations MUST be documented and reported to the CISO. Violations that may 
 | Attribute | Details |
 | :--- | :--- |
 | **Standard Review Frequency** | Annual (every 12 months from effective date) |
-| **Triggered Review Criteria** | Major cloud infrastructure change; material organizational restructuring; significant access-related security incident; new or amended regulatory requirement (PCI DSS, DPDPA, GDPR) |
+| **Triggered Review Criteria** | Major cloud infrastructure change; material organizational restructuring; significant access-related security incident; new or amended regulatory requirement (PCI DSS, DPDP Act 2023, GDPR) |
 | **Policy Owner (Review Lead)** | IT Security Lead |
 | **Review Approver** | CISO |
 | **Next Scheduled Review** | DD.MM.YY |

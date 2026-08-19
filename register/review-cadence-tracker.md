@@ -4,7 +4,7 @@ This document tracks the governance schedule, review cycles, and approval status
 
 ## Review Frequency Requirements
 - **Standard Review:** Annually (every 12 months from last approval date).
-- **Triggered Review:** Conducted out-of-band upon major security incidents, structural organizational changes, significant architectural shifts, or new legal/regulatory enactments (e.g. updates to DPDPA, PCI DSS, GDPR).
+- **Triggered Review:** Conducted out-of-band upon major security incidents, structural organizational changes, significant architectural shifts, or new legal/regulatory enactments (e.g. updates to DPDP Act 2023, PCI DSS, GDPR).
 
 ---
 

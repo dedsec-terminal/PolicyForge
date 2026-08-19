@@ -120,7 +120,7 @@
 | PA-07 | password-authentication | Privileged accounts require hardware-bound FIDO2 key; no shared privileged logins; CDE requires PAM step-up auth | A.8.2 | PR.AA-01 | Req 8.2.1 | - | - | Cross-ref: AM-07 (PAM) | Confirmed |
 | PA-08 | password-authentication | Service accounts: mTLS/OAuth 2.0/restricted tokens; no interactive login; credentials dynamically injected via Vault/Secrets Manager | A.8.5 | PR.AA-01 | Req 8.2.7 | - | - | Cross-ref: AM-10 | Confirmed |
 | PA-09 | password-authentication | Password storage: Argon2id/bcrypt/PBKDF2 (≥600K iterations) with unique salt; no MD5/SHA-1; TLS 1.2+ for transmission | A.8.24 | PR.DS-01 | Req 8.3.2 | - | - | - | Confirmed |
-| PA-10 | password-authentication | Continuous monitoring against known-compromised password databases (e.g., HIBP); force reset on match | A.8.5 | PR.AA-01 | Req 8.3.6 | - | - | DPDPA/GDPR may apply if monitoring involves employee personal data | Review Required |
+| PA-10 | password-authentication | Continuous monitoring against known-compromised password databases (e.g., HIBP); force reset on match | A.8.5 | PR.AA-01 | Req 8.3.6 | - | - | DPDP Act 2023/GDPR may apply if monitoring involves employee personal data | Review Required |
 | PA-11 | password-authentication | Session timeout: corporate IdP 12-hr idle; customer financial apps 15-min idle; sessions invalidated on password change/logout/suspension | A.8.5 | PR.AA-01 | Req 8.2.8 | - | - | - | Confirmed |
 
 ---
@@ -182,7 +182,7 @@ The following cells were flagged **Review** and require manual verification by t
 
 | Flag | Location | Issue |
 | :--- | :--- | :--- |
-| PA-10 DPDPA/GDPR | PA - Password & Authentication | Pending DPO/Legal review - do not close without formal sign-off. |
+| PA-10 DPDP Act 2023/GDPR | PA - Password & Authentication | Pending DPO/Legal review - do not close without formal sign-off. |
 
 ---
 

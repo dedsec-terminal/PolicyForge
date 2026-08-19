@@ -9,7 +9,8 @@
 | #acceptable-use | policies/acceptable-use.md | Acceptable Use | Confirmed |
 | #ctm | mapping/control-traceability-matrix.md | Control Traceability Matrix | Confirmed |
 | #ctm-audit | mapping/ctm_audit_report.md | CTM Audit Report | Confirmed |
-| #exception-log | egister/exception-log.md | Exception Log | Confirmed |
+| #exception-log | 
+egister/exception-log.md | Exception Log | Confirmed |
 
 ## README Links
 
@@ -37,7 +38,8 @@
 | Test | Result | Evidence |
 |---|---|---|
 | Direct hash navigation | PASS | HTTP GET to #ctm loads SPA successfully |
-| Refresh | PASS | window.addEventListener('hashchange', route) and oute() on load handle initial and subsequent state |
+| Refresh | PASS | window.addEventListener('hashchange', route) and 
+oute() on load handle initial and subsequent state |
 | Back / Forward | PASS | history.pushState and hashchange listeners ensure history traversal works without full reload |
 | Sidebar navigation | PASS | Native click interception pushes valid hash states |
 | Internal Markdown links | PASS | Links use #hash natively, avoiding raw .md exposure entirely |

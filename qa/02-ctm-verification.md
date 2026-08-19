@@ -32,7 +32,7 @@
 | BC-08 | PR.AC-03 | PR.IR-03 | NIST CSF 1.1 subcategory deprecated in CSF 2.0. |
 | VR-05 | Blank | Req 12.8.2, 12.8.4 | PCI DSS v4.0.1 mapping for Right to Audit clause. |
 | VR-08 | PR.DS-03 | ID.AM-08 | NIST CSF 1.1 subcategory deprecated in CSF 2.0. |
-| IR-06 | DPDPA Board | DPDP Rules 2025 (72 hrs) | Aligned terminology to 72-hour rule mandate. |
+| IR-06 | DPDP Act 2023 Board | DPDP Rules 2025 (72 hrs) | Aligned terminology to 72-hour rule mandate. |
 
 ## Source-to-CSV Parity
 

@@ -39,7 +39,7 @@ Every policy MUST follow this exact top-to-bottom section order - no reordering,
 | **Next Review Due**    | YYYY-MM-DD (exactly 12 months after Effective Date for v1.0)    |
 | **Policy Owner**       | [Role], FinNexus Solutions                                       |
 | **Approved By**        | [Role(s)], FinNexus Solutions                                    |
-| **Framework Alignment**| ISO/IEC 27001:2022 (...); NIST CSF 2.0 (...); PCI DSS v4.0.1 (...); DPDPA 2025 (...); GDPR (...) |
+| **Framework Alignment**| ISO/IEC 27001:2022 (...); NIST CSF 2.0 (...); PCI DSS v4.0.1 (...); DPDP Act 2023 (...); GDPR (...) |
 ```
 
 - Framework Alignment MUST list specific control/article references (e.g., `A.5.15`, `PR.AA-01`, `Req 7.2`). Generic citations like "ISO 27001" alone are not sufficient.
@@ -78,7 +78,7 @@ Every control statement that specifies a requirement MUST cite a concrete mechan
 | "Revoke access promptly upon termination" | "Disable all accounts within **4 hours** of planned separation; within **1 hour** for termination for cause" |
 | "Passwords must be strong" | "Minimum 14 characters for standard accounts; 20 for privileged/service accounts; 12-password history" |
 | "Use a secure deletion method" | "Use NIST SP 800-88 Rev. 2 or DoD 5220.22-M compliant multi-pass wipe; obtain certificate of destruction" |
-| "Notify relevant parties of a breach" | "Refer to Legal and Compliance within the DPDPA 2025 / GDPR Article 33 notification window" |
+| "Notify relevant parties of a breach" | "Refer to Legal and Compliance within the DPDP Act 2023 / GDPR Article 33 notification window" |
 | "Approved vendors must meet our standards" | "Vendors must sign a DPA or MSA containing obligations reviewed by Legal and Compliance" |
 | "Implement MFA" | "Enforce FIDO2/WebAuthn or TOTP-based MFA; SMS OTP is deprecated for privileged access" |
 
@@ -86,7 +86,7 @@ Every control statement that specifies a requirement MUST cite a concrete mechan
 
 - **Always use "FinNexus Solutions"** as the subject, never "the organization", "our company", "the firm", or generic pronouns.
 - **Use named roles**, not role categories: write "the IT Security Lead", "the CISO", "the Compliance Lead", "the Legal and Compliance team", "Engineering teams". Avoid "the security team" (too vague) or "management" (meaningless).
-- **Regulatory citations**: Always include the specific section/article when citing a regulation. Write `DPDPA 2025 Section 8(6)` not just "DPDPA". Write `GDPR Article 33` not just "GDPR".
+- **Regulatory citations**: Always include the specific section/article when citing a regulation. Write `DPDP Act 2023 Section 8(6)` not just "DPDP Act 2023". Write `GDPR Article 33` not just "GDPR".
 - **Cross-references between policies**: Use the control ID format `(see AM-01)` or `(per the Access Management Policy AM-01)` to link related controls across documents - never hyperlinks, as the suite is intended to be human-readable in any rendering environment.
 - **RFC 2119 keywords**: Use `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY` consistently. Do not use "required", "mandatory", "forbidden" as synonyms - the RFC 2119 terms are the standard.
 
@@ -101,7 +101,7 @@ The sanctions section MUST use the three-tier structure used across AM, AU, and 
 ```
 
 - Every tier MUST include at least one parenthetical concrete example drawn from the policy's domain.
-- Tier 3 MUST explicitly name the applicable Indian statute (IT Act 2000, DPDPA 2025) and the relevant regulatory body (CERT-In, Data Protection Board of India, applicable EU supervisory authority) where a data breach is plausible.
+- Tier 3 MUST explicitly name the applicable Indian statute (IT Act 2000, DPDP Act 2023) and the relevant regulatory body (CERT-In, Data Protection Board of India, applicable EU supervisory authority) where a data breach is plausible.
 
 ### 1.8 Review Cadence Table Format
 
@@ -167,13 +167,13 @@ These prefixes are reserved for the next five policies to be authored. Agents MU
 | **Next Review Due** | DD.MM.YY |
 | **Policy Owner** | Compliance Lead, FinNexus Solutions |
 | **Approved By** | Chief Information Security Officer (CISO) & Data Protection Officer (DPO), FinNexus Solutions |
-| **Framework Alignment** | ISO/IEC 27001:2022 (A.5.9, A.5.10, A.5.12, A.5.13, A.5.14); NIST CSF 2.0 (ID.AM-05, PR.DS-01, PR.DS-02, PR.DS-05); PCI DSS v4.0.1 (Req 3, 4, 9.4); DPDPA 2025 (Sec 4, 6, 8); GDPR (Art 5, 9, 25, 32) |
+| **Framework Alignment** | ISO/IEC 27001:2022 (A.5.9, A.5.10, A.5.12, A.5.13, A.5.14); NIST CSF 2.0 (ID.AM-05, PR.DS-01, PR.DS-02, PR.DS-05); PCI DSS v4.0.1 (Req 3, 4, 9.4); DPDP Act 2023 (Sec 4, 6, 8); GDPR (Art 5, 9, 25, 32) |
 
 ---
 
 ## 1. Purpose
 
-FinNexus Solutions, as a financial services provider operating across India, the United States, and the European Union, handles a wide and varied portfolio of data assets. These range from routine internal operational records to highly sensitive payment account data (PAD), Sensitive Authentication Data (SAD), and the Personally Identifiable Information (PII) of hundreds of thousands of customers - all governed by distinct and demanding legal frameworks including DPDPA 2025, GDPR, and PCI DSS v4.0.1.
+FinNexus Solutions, as a financial services provider operating across India, the United States, and the European Union, handles a wide and varied portfolio of data assets. These range from routine internal operational records to highly sensitive payment account data (PAD), Sensitive Authentication Data (SAD), and the Personally Identifiable Information (PII) of hundreds of thousands of customers - all governed by distinct and demanding legal frameworks including DPDP Act 2023, GDPR, and PCI DSS v4.0.1.
 
 A uniform, undifferentiated approach to data handling creates unnecessary risk: applying controls too loosely to sensitive data exposes FinNexus Solutions to breach liability and regulatory sanction; applying them too rigidly to routine data impedes business agility. This policy establishes a formal, tiered data classification scheme and the corresponding mandatory handling requirements for each tier. It ensures that every FinNexus Solutions employee, contractor, and system interacting with data does so in a manner proportionate to that data's sensitivity, regulatory significance, and potential for harm if disclosed.
 
@@ -211,7 +211,7 @@ All data assets managed by FinNexus Solutions MUST be assigned to one of the fol
 
 All data assets created or received by FinNexus Solutions personnel and systems MUST be assigned a classification tier (as defined in Section 3) at the point of creation or first receipt. Classification is the responsibility of the data asset's creator or the FinNexus Solutions business unit that first receives the data from an external source. Where the appropriate classification is ambiguous, the data MUST be treated as **Confidential** (Tier 2) as a default pending formal review by the Compliance team. No data asset may be labelled as **Public** (Tier 4) without explicit approval from the CISO or an authorized member of the Legal and Compliance team.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.12; NIST CSF ID.AM-05; PCI DSS v4.0.1 Req 9.4.2; DPDPA Sec 8(5); GDPR Art 5(1)(f)
+> **Framework Mapping:** ISO 27001:2022 A.5.12; NIST CSF ID.AM-05; PCI DSS v4.0.1 Req 9.4.2; DPDP Act 2023 Sec 8(5); GDPR Art 5(1)(f)
 
 ---
 
@@ -238,7 +238,7 @@ All documents, data files, and records containing **Restricted** or **Confidenti
 - **Sharing:** MUST NOT be shared with external parties without a fully executed DPA or equivalent legal agreement reviewed by Legal and Compliance. Where Restricted data must be shared for testing, analytics, or vendor processing, it MUST first be pseudonymized, anonymized, or tokenized to the extent technically feasible.
 - **Cardholder Data Environment (CDE):** All payment account data and SAD handled within the CDE is additionally governed by PCI DSS v4.0.1 Requirements 3 and 4 and the PCI DSS Compliance Programme maintained by the Compliance team.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.14, A.8.10, A.8.24; NIST CSF PR.DS-01, PR.DS-02; PCI DSS v4.0.1 Req 3.1–3.7, 4.1–4.2; DPDPA Sec 4, 6, 8; GDPR Art 9, 25, 32
+> **Framework Mapping:** ISO 27001:2022 A.5.14, A.8.10, A.8.24; NIST CSF PR.DS-01, PR.DS-02; PCI DSS v4.0.1 Req 3.1–3.7, 4.1–4.2; DPDP Act 2023 Sec 4, 6, 8; GDPR Art 9, 25, 32
 
 ---
 
@@ -273,13 +273,13 @@ All documents, data files, and records containing **Restricted** or **Confidenti
 
 ### DC-07 - Data Minimization and Retention
 
-FinNexus Solutions MUST collect, process, and retain data only to the minimum extent necessary for the specified, lawful business purpose for which it was collected - consistent with DPDPA 2025 Section 4 (purpose limitation) and GDPR Article 5(1)(c) (data minimization).
+FinNexus Solutions MUST collect, process, and retain data only to the minimum extent necessary for the specified, lawful business purpose for which it was collected - consistent with DPDP Act 2023 Section 4 (purpose limitation) and GDPR Article 5(1)(c) (data minimization).
 
 - Engineering and Product teams MUST design data flows and schemas to collect only the data fields demonstrably required for product functionality. Requests to add new personal data fields to FinNexus Solutions products MUST go through a Privacy Impact Assessment (PIA) reviewed by Legal and Compliance.
 - Data retention periods for each Restricted data category MUST be documented in the FinNexus Solutions Data Retention Schedule, maintained by Compliance. Retained data MUST NOT be kept beyond its defined retention period without a documented legal obligation or regulatory hold.
 - Data exceeding its retention period MUST be disposed of in accordance with DC-08.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.9, A.8.10; NIST CSF PR.DS-01; PCI DSS v4.0.1 Req 3.2; DPDPA Sec 4, 8(7); GDPR Art 5(1)(c), 5(1)(e)
+> **Framework Mapping:** ISO 27001:2022 A.5.9, A.8.10; NIST CSF PR.DS-01; PCI DSS v4.0.1 Req 3.2; DPDP Act 2023 Sec 4, 8(7); GDPR Art 5(1)(c), 5(1)(e)
 
 ---
 
@@ -292,7 +292,7 @@ When data reaches the end of its retention period, or when storage media is deco
 - **Physical documents (Restricted or Confidential):** MUST be cross-cut shredded using an onsite shredder or collected and destroyed by a contracted, certified secure destruction vendor. A certificate of destruction MUST be obtained and retained.
 - **Decommissioned hardware** (laptops, servers, storage drives) containing any Restricted or Confidential data MUST be cleared by IT before redeployment or disposal, with the disposal method and outcome recorded in the asset decommissioning log.
 
-> **Framework Mapping:** ISO 27001:2022 A.8.10; NIST CSF PR.DS-03; PCI DSS v4.0.1 Req 3.2, 9.4.6; DPDPA Sec 8(7); GDPR Art 5(1)(e), 17
+> **Framework Mapping:** ISO 27001:2022 A.8.10; NIST CSF PR.DS-03; PCI DSS v4.0.1 Req 3.2, 9.4.6; DPDP Act 2023 Sec 8(7); GDPR Art 5(1)(e), 17
 
 ---
 
@@ -301,13 +301,13 @@ When data reaches the end of its retention period, or when storage media is deco
 Production data - particularly Restricted data including customer PII and payment account data - MUST NOT be used in development, testing, staging, or QA environments unless there is no viable alternative, and only with explicit written approval from the CISO and Compliance Lead.
 
 Where any use of production Restricted data in a non-production environment is approved as an exception:
-- The data MUST be pseudonymized or anonymized prior to use, and the anonymisation technique MUST be reviewed by the Compliance team to verify it meets the standards required under DPDPA 2025 and GDPR.
+- The data MUST be pseudonymized or anonymized prior to use, and the anonymisation technique MUST be reviewed by the Compliance team to verify it meets the standards required under DPDP Act 2023 and GDPR.
 - Access to the non-production environment containing that data MUST be restricted with controls equivalent to those applied in production.
 - The exception MUST be logged in [Exception Log](#exception-log) with the CISO's sign-off.
 
 FinNexus Solutions Engineering teams MUST use synthetically generated or purpose-built test datasets for all standard development and testing activities.
 
-> **Framework Mapping:** ISO 27001:2022 A.8.31; NIST CSF PR.DS-01; PCI DSS v4.0.1 Req 3.3.2; DPDPA Sec 6, 8; GDPR Art 25, 32
+> **Framework Mapping:** ISO 27001:2022 A.8.31; NIST CSF PR.DS-01; PCI DSS v4.0.1 Req 3.3.2; DPDP Act 2023 Sec 6, 8; GDPR Art 25, 32
 
 ---
 
@@ -315,11 +315,11 @@ FinNexus Solutions Engineering teams MUST use synthetically generated or purpose
 
 FinNexus Solutions transfers personal data across jurisdictions by virtue of operating in India, the US, and EU simultaneously. All cross-border transfers of **Restricted** personal data - including customer PII - MUST comply with:
 
-- **DPDPA 2025:** Transfers of digital personal data outside India are permissible only to countries or territories notified as permissible by the Indian Government, or where FinNexus Solutions has implemented an approved transfer mechanism (e.g., standard contractual obligations as specified under DPDPA rules). The Compliance team MUST maintain a current Transfer Impact Assessment for each cross-border transfer arrangement.
+- **DPDP Act 2023:** Transfers of digital personal data outside India are permissible only to countries or territories notified as permissible by the Indian Government, or where FinNexus Solutions has implemented an approved transfer mechanism (e.g., standard contractual obligations as specified under DPDP Rules 2025). The Compliance team MUST maintain a current Transfer Impact Assessment for each cross-border transfer arrangement.
 - **GDPR:** Transfers of personal data from the EU to India MUST be covered by an appropriate transfer mechanism under GDPR Chapter V (e.g., Standard Contractual Clauses, adequacy decision if applicable). Legal and Compliance MUST review and approve all such mechanisms.
 - Any new data flow that would result in a new cross-border transfer of personal data MUST be identified during engineering design, assessed via a Privacy Impact Assessment (DC-07), and approved by Legal and Compliance before the data flow goes live.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.14; NIST CSF GV.SC-07; DPDPA Sec 16; GDPR Art 44–49
+> **Framework Mapping:** ISO 27001:2022 A.5.14; NIST CSF GV.SC-07; DPDP Act 2023 Sec 16; GDPR Art 44–49
 
 ---
 
@@ -334,7 +334,7 @@ Certain categories of personal data warrant heightened protection beyond the sta
 
 Such data MUST be subject to an additional layer of technical control beyond standard Restricted data requirements - including field-level encryption at rest, strict audit logging of every access event, and a documented legal basis for each processing activity maintained by Legal and Compliance. Collection of special category data MUST be the minimum necessary and approved by the DPO prior to implementation.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.12, A.8.24; NIST CSF PR.DS-01; DPDPA Sec 8; GDPR Art 9, 35
+> **Framework Mapping:** ISO 27001:2022 A.5.12, A.8.24; NIST CSF PR.DS-01; DPDP Act 2023 Sec 8; GDPR Art 9, 35
 
 ---
 
@@ -343,11 +343,11 @@ Such data MUST be subject to an additional layer of technical control beyond sta
 | Role | Responsibilities Under This Policy |
 | :--- | :--- |
 | **CISO** | Policy ultimate owner; approves exceptions for production data use in non-production environments (DC-09); approves Public-tier reclassification; oversees audit of data handling compliance. |
-| **Compliance Lead / DPO** | Day-to-day policy stewardship; maintains the Data Retention Schedule and Transfer Impact Assessments; reviews Privacy Impact Assessments; leads DPDPA/GDPR compliance for data handling practices; approves special category data processing (DC-11). |
+| **Compliance Lead / DPO** | Day-to-day policy stewardship; maintains the Data Retention Schedule and Transfer Impact Assessments; reviews Privacy Impact Assessments; leads DPDP Act 2023/GDPR compliance for data handling practices; approves special category data processing (DC-11). |
 | **IT Security Lead** | Maintains the list of approved storage systems for Restricted data; oversees implementation of encryption and access controls for data at rest and in transit; reviews technical handling controls for each classification tier. |
 | **Engineering / Product Development** | Implements data minimisation in product design (DC-07); uses synthetic test data by default (DC-09); applies encryption and access controls at the application and infrastructure layer; routes new data flows through PIA process. |
 | **Legal and Compliance** | Reviews and approves cross-border transfer mechanisms (DC-10); signs off on third-party DPAs and NDA agreements for Confidential/Restricted data sharing; advises on legal basis for special category data (DC-11). |
-| **Human Resources** | Handles employee data records (Confidential tier) in accordance with this policy; ensures HR systems storing employee data are compliant with DPDPA 2025 and applicable Indian employment data obligations. |
+| **Human Resources** | Handles employee data records (Confidential tier) in accordance with this policy; ensures HR systems storing employee data are compliant with DPDP Act 2023 and applicable Indian employment data obligations. |
 | **All Employees, Contractors, and Vendors** | Classify data correctly at point of creation (DC-01); apply appropriate labels (DC-02); adhere to handling requirements for each tier; report suspected misclassification or data mishandling to the IT Security team or Compliance Lead immediately. |
 
 ---
@@ -358,9 +358,9 @@ Violations of this policy are assessed in proportion to the classification tier 
 
 - **Tier 1 - Minor Breach** (e.g., failure to label an Internal document correctly; brief use of an unencrypted channel to share Internal-tier data): Formal reminder and re-training; correction of the data handling error within 24 hours.
 - **Tier 2 - Moderate Breach** (e.g., storing Confidential data in an unapproved personal cloud account; transmitting Restricted data without encryption): Written warning; access privileges reviewed and potentially reduced; mandatory completion of Data Protection training module; escalation to HR.
-- **Tier 3 - Severe Breach** (e.g., unauthorized exfiltration or external disclosure of Restricted customer PII or payment data; use of production Restricted data in a development environment without approval; deliberate misclassification to circumvent controls): Immediate suspension of system access pending investigation; likely termination of employment or contract; potential legal action and/or criminal referral under DPDPA 2025 and the Indian IT Act 2000; notification to relevant regulators (CERT-In, Data Protection Board of India, or EU supervisory authority) as required by law.
+- **Tier 3 - Severe Breach** (e.g., unauthorized exfiltration or external disclosure of Restricted customer PII or payment data; use of production Restricted data in a development environment without approval; deliberate misclassification to circumvent controls): Immediate suspension of system access pending investigation; likely termination of employment or contract; potential legal action and/or criminal referral under DPDP Act 2023 and the Indian IT Act 2000; notification to relevant regulators (CERT-In, Data Protection Board of India, or EU supervisory authority) as required by law.
 
-All Tier 3 violations MUST be treated as potential data breach events and immediately referred to Legal and Compliance for breach notification assessment under DPDPA 2025 Section 8(6) and GDPR Article 33.
+All Tier 3 violations MUST be treated as potential data breach events and immediately referred to Legal and Compliance for breach notification assessment under DPDP Act 2023 Section 8(6) and GDPR Article 33.
 
 ---
 
@@ -369,7 +369,7 @@ All Tier 3 violations MUST be treated as potential data breach events and immedi
 | Attribute | Details |
 | :--- | :--- |
 | **Standard Review Frequency** | Annual (every 12 months from effective date) |
-| **Triggered Review Criteria** | New product lines or data types introduced; material change in DPDPA rules or GDPR guidance (e.g., new SCCs, Data Protection Board guidance); PCI DSS version update affecting Req 3/4; following any Tier 3 violation or regulatory enquiry involving data classification |
+| **Triggered Review Criteria** | New product lines or data types introduced; material change in DPDP Rules 2025 or GDPR guidance (e.g., new SCCs, Data Protection Board guidance); PCI DSS version update affecting Req 3/4; following any Tier 3 violation or regulatory enquiry involving data classification |
 | **Policy Owner (Review Lead)** | Compliance Lead / Data Protection Officer (DPO) |
 | **Review Approver** | CISO |
 | **Next Scheduled Review** | DD.MM.YY |

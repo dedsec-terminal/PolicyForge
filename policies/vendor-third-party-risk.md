@@ -78,7 +78,7 @@ Vendors classified as High Risk (Tier 1) MUST provide independent, third-party v
 
 FinNexus Solutions MUST establish formal, binding contractual agreements with all third-party vendors outlining their security and privacy obligations. Legal and Compliance MUST ensure that all vendors processing personal data sign a Data Processing Agreement (DPA) that explicitly details purpose limitation, data minimization, and cross-border transfer mechanisms compliant with DPDP Act 2023 and GDPR. Vendors processing payment data MUST explicitly acknowledge their responsibility for the security of cardholder data under PCI DSS v4.0.1 Requirement 12.8.2.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.20; NIST CSF 2.0 GV.SC-07; PCI DSS v4.0.1 Req 12.8.2; DPDPA Sec 8(2); GDPR Art 28
+> **Framework Mapping:** ISO 27001:2022 A.5.20; NIST CSF 2.0 GV.SC-07; PCI DSS v4.0.1 Req 12.8.2; DPDP Act 2023 Sec 8(2); GDPR Art 28
 
 ---
 
@@ -100,9 +100,9 @@ FinNexus Solutions MUST continuously monitor its vendor ecosystem. The IT Securi
 
 ### VR-07 - Vendor Incident Response and Breach Notification
 
-Third-party contracts MUST mandate that the vendor notify FinNexus Solutions of any confirmed or suspected data breach affecting FinNexus Solutions data within **24 hours** of discovery. The IT Security Lead MUST integrate vendor breach notifications into the internal Incident Response plan. If a vendor breach involves Restricted data (e.g., PII under DPDPA/GDPR), Legal and Compliance MUST direct the regulatory notification process and instruct the vendor on required containment and forensic preservation steps.
+Third-party contracts MUST mandate that the vendor notify FinNexus Solutions of any confirmed or suspected data breach affecting FinNexus Solutions data within **24 hours** of discovery. The IT Security Lead MUST integrate vendor breach notifications into the internal Incident Response plan. If a vendor breach involves Restricted data (e.g., PII under DPDP Act 2023/GDPR), Legal and Compliance MUST direct the regulatory notification process and instruct the vendor on required containment and forensic preservation steps.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.22; NIST CSF 2.0 GV.SC-06; DPDPA Sec 8(6); GDPR Art 33(2)
+> **Framework Mapping:** ISO 27001:2022 A.5.22; NIST CSF 2.0 GV.SC-06; DPDP Act 2023 Sec 8(6); GDPR Art 33(2)
 
 ---
 
@@ -110,7 +110,7 @@ Third-party contracts MUST mandate that the vendor notify FinNexus Solutions of 
 
 Upon termination of a vendor relationship, the IT team MUST revoke all vendor access to FinNexus Solutions systems and physical premises within **4 hours**. The vendor MUST return or provably destroy all FinNexus Solutions data in their possession. The Compliance Lead MUST obtain a formal Certificate of Destruction (CoD) from High Risk (Tier 1) vendors confirming that all Restricted and Confidential data has been cryptographically erased or securely wiped using a NIST SP 800-88 Rev. 2 compliant method within **30 days** of contract termination.
 
-> **Framework Mapping:** ISO 27001:2022 A.5.22, A.8.10; PCI DSS v4.0.1 Req 12.8.5; DPDPA Sec 8(7); GDPR Art 28(3)(g)
+> **Framework Mapping:** ISO 27001:2022 A.5.22, A.8.10; PCI DSS v4.0.1 Req 12.8.5; DPDP Act 2023 Sec 8(7); GDPR Art 28(3)(g)
 
 ---
 
