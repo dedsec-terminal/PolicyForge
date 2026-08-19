@@ -1,90 +1,81 @@
 # PolicyForge
 
-**Enterprise Security Policy & Governance Suite for FinNexus Solutions**
+[![Live policy suite](https://img.shields.io/badge/Live%20suite-GitHub%20Pages-6366f1?style=flat-square&logo=github)](https://dedsec-terminal.github.io/PolicyForge/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-A complete, authored information security policy suite demonstrating three pillars of enterprise security management—moving beyond generic templates into actionable, audit-ready governance.
+**PolicyForge** is a portfolio-grade information-security governance suite for the fictional fintech organisation **FinNexus Solutions**. It shows how a policy programme can move from business context to enforceable controls, evidence expectations, traceability, and ongoing governance.
 
-[![GitHub Pages](https://img.shields.io/badge/docs-live-6366f1?style=flat-square&logo=github)](https://dedsec-terminal.github.io/PolicyForge/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+> This is a demonstration artefact, not legal advice or a complete compliance programme. Organisations should tailor the materials, control owners, risk assessments, and legal obligations to their own environment.
 
----
+## Start here
 
-## What This Is
+- **[Browse the live policy suite](https://dedsec-terminal.github.io/PolicyForge/)** for the best reading experience.
+- Read the [organisation profile](context/org-profile.md) first. It defines FinNexus's scope, operating model, regulatory context, and risk appetite.
+- Review the [policy style guide](context/policy-style-guide.md) to understand the drafting conventions and control-ID format.
+- Use the [control traceability matrix](mapping/control-traceability-matrix.md) to trace controls to the mapped frameworks.
 
-PolicyForge is a polished, authored enterprise security policy suite designed for a hypothetical fintech environment ("FinNexus Solutions"). It demonstrates a complete operational governance lifecycle:
-1. **Organizational profile and authoring style guide** defining the scope and standards.
-2. **Concise, RFC-2119-style policy documents** translating regulatory clauses into enforceable, verifiable controls.
-3. **Control traceability mapping** (CTM) directly linking internal safeguards to major compliance frameworks.
-4. **Active governance registers** tracking exceptions and review cadences to reflect a living security program.
+## What the repository demonstrates
 
-This repository serves as a documentation-first portfolio project, showcasing applied GRC (Governance, Risk, and Compliance) design, control traceability, and audit readiness for GRC, IT Audit, and Security Management professionals.
+| Capability | Evidence in this repository |
+| --- | --- |
+| Governance scope and accountability | [Organisation profile](context/org-profile.md) and [policy style guide](context/policy-style-guide.md) |
+| Enforceable security requirements | Eight focused policies with numbered safeguards and normative language |
+| Control-to-framework traceability | [Control traceability matrix](mapping/control-traceability-matrix.md) and [audit report](mapping/ctm_audit_report.md) |
+| Operational governance | [Exception log](register/exception-log.md) and [review cadence tracker](register/review-cadence-tracker.md) |
 
-### The Stack & Frameworks
-- **Language / Formats:** Markdown (policy & docs content); CSV (governance registers).
-- **Framework / Runtime:** Static documentation published via GitHub Pages.
-- **Authoritative Frameworks Mapped:** ISO/IEC 27001:2022, NIST CSF 2.0, PCI DSS v4.0.1, DPDP Act 2023, and GDPR.
+The suite maps controls to ISO/IEC 27001:2022, NIST CSF 2.0, PCI DSS v4.0.1, the Digital Personal Data Protection Act, 2023 (India), and the GDPR. A framework citation supports traceability; it does not by itself establish compliance.
 
-## How It's Organized
+## Repository map
 
 ```text
-.github/                       # GitHub workflow and Pages helpers
-docs/                          # GitHub Pages copy of the documentation viewer
-context/
-  org-profile.md               # Organizational profile & regulatory scope
-  policy-style-guide.md        # Authoring rules, control ID registry & canonical example
-mapping/
-  control-traceability-matrix.md # CTM linking safeguards to frameworks
-  ctm_audit_report.md          # Independent assessment of the traceability matrix
-policies/
-  acceptable-use.md            # Acceptable Use (AU) policy
-  access-management.md         # Access Management (AM) policy
-  asset-management.md          # Asset Management (AS) policy
-  business-continuity-backup.md # Business Continuity & Disaster Recovery (BC)
-  data-classification-handling.md # Data Classification & Handling (DC)
-  incident-response.md         # Incident Response (IR)
-  password-authentication.md   # Password & Authentication (PA)
-  vendor-third-party-risk.md   # Vendor & Third-Party Risk (VR)
-register/
-  exception-log.md             # Exception register (with entries) + CSV
-  review-cadence-tracker.md    # Review cadence tracker + CSV
+context/                       # Organisation context and policy-authoring standards
+  org-profile.md               # Read first: scope, risk appetite, regulatory context
+  policy-style-guide.md        # Drafting rules and control-ID conventions
+policies/                      # Authoritative policy source documents
+  acceptable-use.md
+  access-management.md
+  asset-management.md
+  business-continuity-backup.md
+  data-classification-handling.md
+  incident-response.md
+  password-authentication.md
+  vendor-third-party-risk.md
+mapping/                       # Control traceability and its independent review
+register/                      # Exception and review-cadence governance records
+docs/index.html                # Hand-authored GitHub Pages viewer
+.github/workflows/             # Builds and deploys the viewer from source documents
 ```
 
-### How It Fits Together
-- The **`org-profile`** sets the scope and risk appetite used by the policies. 
-- The **`policy-style-guide`** enforces consistent structure and numbering (e.g., `AM-01`, `DC-01`). 
-- Each policy file contains numbered safeguards with explicit framework citations. 
-- The **`mapping/`** artifacts detail the CTM maintenance approach and provide the actual matrix, allowing auditors to tie every safeguard to specific framework clauses. 
-- The **`register/`** files provide operational governance artifacts (exceptions + review cadence) that prove a living program, not a static binder of rules. 
-- The **`docs/`** folder is the published GitHub Pages site for frictionless presentation.
+## How the programme fits together
 
-## How to Run It
+```text
+Organisation profile
+        ↓
+Policy style guide ──→ Policies and control IDs
+        ↓                       ↓
+Review / exception registers ← Control traceability matrix ← Framework requirements
+```
 
-1. **View the live site (Best for presentation & demo):**
-   - Open: [https://dedsec-terminal.github.io/PolicyForge/](https://dedsec-terminal.github.io/PolicyForge/)
+The Markdown outside `docs/` is the source of truth. On every push to `main`, GitHub Actions assembles a temporary Pages site from those source documents and `docs/index.html`, then deploys it. The generated document copies are deliberately not versioned in this repository.
 
-2. **Clone and review locally:**
-   ```bash
-   git clone https://github.com/dedsec-terminal/PolicyForge.git
-   cd PolicyForge
-   ```
-   Open the Markdown files directly in your preferred editor (VS Code, Obsidian, etc.), or serve the `docs/` folder locally:
-   ```bash
-   python -m http.server 8000 --directory docs
-   # Open http://localhost:8000 in your browser
-   ```
+## Review the suite locally
 
-*No build configuration, environment variables, or secrets are required—the repository is entirely documentation-driven.*
+No build tools, dependencies, credentials, or environment variables are required to review the source documents.
 
-## Key Artifacts to Highlight
+```bash
+git clone https://github.com/dedsec-terminal/PolicyForge.git
+cd PolicyForge
+```
 
-For professionals presenting this suite in a portfolio or interview:
+Open the Markdown files in your editor, or serve the deployed viewer after creating its generated site output through the GitHub Actions workflow. The live site is the simplest option for navigating the complete set.
 
-- **`context/org-profile.md`** — Demonstrates advanced scoping and regulatory analysis (DPDP Act, GDPR, PCI DSS).
-- **`context/policy-style-guide.md`** — Shows governance of authoring standards, naming conventions, RFC-2119 discipline, and a canonical policy example (highlighting process-oriented thinking).
-- **`policies/*.md`** — Eight full, authored policy documents with numbered safeguards and framework mappings, demonstrating domain knowledge and the ability to translate requirements into enforceable controls.
-- **`mapping/control-traceability-matrix.md`** — The CTM methodology and matrix: proves absolute traceability, reduces pre-audit review time, and enables targeted audit evidence collection.
-- **`register/exception-log.md`** & **`review-cadence-tracker.md`** — Demonstrates real-world operational governance including time-bound exceptions, compensating controls, and CISO sign-off workflows.
+## Suggested review path
+
+1. Start with the [organisation profile](context/org-profile.md).
+2. Read the [policy style guide](context/policy-style-guide.md), then the policies relevant to your domain.
+3. Inspect the [control traceability matrix](mapping/control-traceability-matrix.md) and its [audit report](mapping/ctm_audit_report.md).
+4. Close with the [exception log](register/exception-log.md) and [review cadence tracker](register/review-cadence-tracker.md) to see how the programme is maintained.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Distributed under the [MIT License](LICENSE).
