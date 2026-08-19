@@ -4,7 +4,7 @@
 | :--- | :--- |
 | **Policy ID** | AU |
 | **Document Title** | Acceptable Use Policy |
-| **Version** | 1.0 |
+| **Version** | X.X |
 | **Status** | Draft (illustrative) |
 | **Classification** | Internal - General |
 | **Effective Date** | DD.MM.YY |
@@ -216,4 +216,4 @@ All disciplinary actions under this policy MUST be documented by HR and reported
 
 | Version | Date | Author | Summary of Changes |
 | :--- | :--- | :--- | :--- |
-| 1.0 | DD.MM.YY | CISO, FinNexus Solutions | Initial policy drafted, reviewed, and approved. |
+| X.X | DD.MM.YY | CISO, FinNexus Solutions | Initial policy drafted, reviewed, and approved. |
