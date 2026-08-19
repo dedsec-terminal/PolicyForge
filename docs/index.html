@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>PolicyForge — FinNexus Security Policy Suite</title>
+  <title>PolicyForge - FinNexus Security Policy Suite</title>
   <meta name="description" content="PolicyForge: Enterprise security policies, control traceability, and governance registers for FinNexus Solutions."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -153,7 +153,7 @@
 <body>
 
 <header id="hdr">
-  <div class="wordmark">PolicyForge <span>FinNexus Solutions — Security Policy Suite</span></div>
+  <div class="wordmark">PolicyForge <span>FinNexus Solutions - Security Policy Suite</span></div>
   <a class="gh-link" href="https://github.com/dedsec-terminal/PolicyForge" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
     GitHub
@@ -204,7 +204,7 @@
 </div>
 
 <footer id="ftr">
-  PolicyForge — FinNexus Solutions Security Policy Suite &nbsp;&middot;&nbsp;
+  PolicyForge - FinNexus Solutions Security Policy Suite &nbsp;&middot;&nbsp;
   <a href="https://github.com/dedsec-terminal/PolicyForge" target="_blank" rel="noopener">github.com/dedsec-terminal/PolicyForge</a>
 </footer>
 
@@ -213,79 +213,158 @@
   'use strict';
   marked.setOptions({gfm:true,breaks:false,mangle:false,headerIds:false});
 
-  var links=Array.from(document.querySelectorAll('.nl'));
-  var md=document.getElementById('md');
-  var loader=document.getElementById('loader');
-  var err=document.getElementById('err');
-  var active=null;
+  var registry = [
+  {
+    "id": "readme",
+    "src": "README.md",
+    "title": "README"
+  },
+  {
+    "id": "acceptable-use",
+    "src": "policies/acceptable-use.md",
+    "title": "Acceptable Use"
+  },
+  {
+    "id": "access-management",
+    "src": "policies/access-management.md",
+    "title": "Access Management"
+  },
+  {
+    "id": "asset-management",
+    "src": "policies/asset-management.md",
+    "title": "Asset Management"
+  },
+  {
+    "id": "business-continuity",
+    "src": "policies/business-continuity-backup.md",
+    "title": "Business Continuity & Backup"
+  },
+  {
+    "id": "data-classification",
+    "src": "policies/data-classification-handling.md",
+    "title": "Data Classification & Handling"
+  },
+  {
+    "id": "incident-response",
+    "src": "policies/incident-response.md",
+    "title": "Incident Response"
+  },
+  {
+    "id": "password-auth",
+    "src": "policies/password-authentication.md",
+    "title": "Password & Authentication"
+  },
+  {
+    "id": "vendor-risk",
+    "src": "policies/vendor-third-party-risk.md",
+    "title": "Vendor & Third-Party Risk"
+  },
+  {
+    "id": "ctm",
+    "src": "mapping/control-traceability-matrix.md",
+    "title": "Control Traceability Matrix"
+  },
+  {
+    "id": "ctm-audit",
+    "src": "mapping/ctm_audit_report.md",
+    "title": "CTM Audit Report"
+  },
+  {
+    "id": "exception-log",
+    "src": "register/exception-log.md",
+    "title": "Exception Log"
+  },
+  {
+    "id": "review-cadence",
+    "src": "register/review-cadence-tracker.md",
+    "title": "Review Cadence Tracker"
+  },
+  {
+    "id": "org-profile",
+    "src": "context/org-profile.md",
+    "title": "Organisation Profile"
+  }
+];
+  
+  var md = document.getElementById('md');
+  var s = document.getElementById('s');
 
-  function setActive(l){if(active)active.classList.remove('active');active=l;l.classList.add('active')}
-
-  function load(path){
-    loader.classList.add('v');
-    md.innerHTML='';
-    err.classList.remove('v');
-    fetch(path)
-      .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' — '+path);return r.text()})
-      .then(function(txt){
-        loader.classList.remove('v');
-        md.innerHTML=marked.parse(txt);
-        // wrap tables
-        md.querySelectorAll('table').forEach(function(t){
-          if(t.parentNode.classList.contains('tw'))return;
-          var w=document.createElement('div');w.className='tw';
-          t.parentNode.insertBefore(w,t);w.appendChild(t);
-        });
-        window.scrollTo(0,0);
-      })
-      .catch(function(e){
-        loader.classList.remove('v');
-        err.textContent='\u26a0 '+e.message;
-        err.classList.add('v');
-      });
+  function getDocById(id) {
+    return registry.find(function(d) { return d.id === id; });
   }
 
-  links.forEach(function(l){
-    l.addEventListener('click',function(e){
-      e.preventDefault();
-      setActive(this);
-      load(this.dataset.src);
-      history.replaceState(null,'',this.getAttribute('href'));
+  function render(html) {
+    md.innerHTML = html;
+    window.scrollTo(0,0);
+  }
+
+  function setActive(id) {
+    document.querySelectorAll('.nl').forEach(function(l) {
+      if (l.getAttribute('href') === '#' + id) {
+        l.classList.add('bg-gray-800','text-white');
+      } else {
+        l.classList.remove('bg-gray-800','text-white');
+      }
     });
-  });
+  }
+
+  function load(doc) {
+    fetch(doc.src)
+      .then(function(r) { return r.ok ? r.text() : 'Error loading document.' })
+      .then(function(text) {
+        render(marked.parse(text));
+        setActive(doc.id);
+      })
+      .catch(function(e) { render('Network error.'); });
+  }
+
+  function route() {
+    var h = window.location.hash.slice(1);
+    var doc = getDocById(h);
+    if (!doc) doc = getDocById('readme');
+    if (doc) load(doc);
+  }
 
   md.addEventListener('click', function(e) {
     var a = e.target.closest('a');
     if (a && a.getAttribute('href')) {
       var href = a.getAttribute('href');
-      // If it's a relative markdown link (e.g. "../register/exception-log.md" or "mapping/ctm_audit_report.md")
-      if (href.endsWith('.md') && !href.startsWith('http')) {
-        var filename = href.split('/').pop();
-        var targetLink = links.find(function(l) { return l.dataset.src.endsWith(filename); });
-        if (targetLink) {
+      if (href.startsWith('#')) return;
+      
+      if (href.startsWith('https://dedsec-terminal.github.io/PolicyForge/#')) {
+        var hash = href.split('#')[1];
+        if (registry.find(function(d) { return d.id === hash; })) {
           e.preventDefault();
-          var hash = targetLink.getAttribute('href');
-          history.pushState(null, '', hash);
+          history.pushState(null, '', '#' + hash);
+          route();
+          return;
+        }
+      }
+
+      if (href.endsWith('.md') && !href.startsWith('http')) {
+        // Resolve target document precisely
+        var filename = href.split('/').pop();
+        var targetDoc = registry.find(function(d) { return d.src.endsWith('/' + filename) || d.src === filename; });
+        if (targetDoc) {
+          e.preventDefault();
+          history.pushState(null, '', '#' + targetDoc.id);
           route();
         }
       }
     }
   });
 
-  document.getElementById('s').addEventListener('input',function(){
-    var q=this.value.trim().toLowerCase();
-    links.forEach(function(l){l.classList.toggle('hidden',q!==''&&!l.textContent.toLowerCase().includes(q))});
-    document.querySelectorAll('.ng').forEach(function(g){
-      g.style.display=Array.from(g.querySelectorAll('.nl')).some(function(l){return!l.classList.contains('hidden')})?'':'none';
+  s.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    document.querySelectorAll('.nl').forEach(function(l) {
+      l.classList.toggle('hidden', q !== '' && !l.textContent.toLowerCase().includes(q));
+    });
+    document.querySelectorAll('.ng').forEach(function(g) {
+      var vis = Array.from(g.querySelectorAll('.nl')).some(function(l) { return !l.classList.contains('hidden'); });
+      g.querySelector('.ng-title').style.display = vis ? 'block' : 'none';
     });
   });
 
-  function route(){
-    var h=window.location.hash.slice(1);
-    var t=h?links.find(function(l){return l.getAttribute('href')==='#'+h}):null;
-    if(!t)t=links.find(function(l){return l.dataset.src==='README.md'});
-    if(t){setActive(t);load(t.dataset.src)}
-  }
   window.addEventListener('hashchange', route);
   route();
 })();
