@@ -1,4 +1,4 @@
-name: Sync docs and deploy to GitHub Pages
+name: Build and deploy GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -23,29 +23,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sync markdown files into docs/
+      - name: Assemble Pages site
         run: |
-          mkdir -p docs/policies docs/mapping docs/register docs/context
-          cp README.md              docs/README.md
-          cp policies/*.md          docs/policies/
-          cp mapping/control-traceability-matrix.md docs/mapping/
-          cp mapping/ctm_audit_report.md            docs/mapping/
-          cp register/exception-log.md              docs/register/
-          cp register/review-cadence-tracker.md     docs/register/
-          cp context/org-profile.md                 docs/context/
-
-      - name: Commit synced files
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/
-          git diff --cached --quiet || git commit -m "chore: sync markdown files into docs/ [skip ci]"
-          git push
+          mkdir -p _site/{policies,mapping,register,context}
+          cp docs/index.html _site/index.html
+          cp README.md _site/README.md
+          cp policies/*.md _site/policies/
+          cp mapping/* _site/mapping/
+          cp register/* _site/register/
+          cp context/*.md _site/context/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deploy

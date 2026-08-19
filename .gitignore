@@ -5,3 +5,7 @@ __pycache__/
 venv/
 env/
 .env
+
+# GitHub Pages source; Actions generates the remaining site files at deploy time.
+docs/*
+!docs/index.html
