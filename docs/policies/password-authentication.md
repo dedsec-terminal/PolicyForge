@@ -2,7 +2,7 @@
 
 | Field | Details |
 | :--- | :--- |
-| **Policy ID** | PW |
+| **Policy ID** | PA |
 | **Document Title** | Password & Authentication Policy |
 | **Version** | 1.0 |
 | **Status** | Active |
