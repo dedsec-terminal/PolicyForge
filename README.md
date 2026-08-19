@@ -26,7 +26,7 @@ This repository serves as a documentation-first portfolio project, showcasing ap
 
 ## How It's Organized
 
-`	ext
+```text
 .github/                       # GitHub workflow and Pages helpers
 docs/                          # GitHub Pages copy of the documentation viewer
 context/
@@ -47,15 +47,15 @@ policies/
 register/
   exception-log.md             # Exception register (with entries) + CSV
   review-cadence-tracker.md    # Review cadence tracker + CSV
-`
+```
 
 ### How It Fits Together
-- The **org-profile** sets the scope and risk appetite used by the policies. 
-- The **policy-style-guide** enforces consistent structure and numbering (e.g., AM-01, DC-01). 
+- The **`org-profile`** sets the scope and risk appetite used by the policies. 
+- The **`policy-style-guide`** enforces consistent structure and numbering (e.g., `AM-01`, `DC-01`). 
 - Each policy file contains numbered safeguards with explicit framework citations. 
-- The **mapping/** artifacts detail the CTM maintenance approach and provide the actual matrix, allowing auditors to tie every safeguard to specific framework clauses. 
-- The **egister/** files provide operational governance artifacts (exceptions + review cadence) that prove a living program, not a static binder of rules. 
-- The **docs/** folder is the published GitHub Pages site for frictionless presentation.
+- The **`mapping/`** artifacts detail the CTM maintenance approach and provide the actual matrix, allowing auditors to tie every safeguard to specific framework clauses. 
+- The **`register/`** files provide operational governance artifacts (exceptions + review cadence) that prove a living program, not a static binder of rules. 
+- The **`docs/`** folder is the published GitHub Pages site for frictionless presentation.
 
 ## How to Run It
 
@@ -63,15 +63,15 @@ register/
    - Open: [https://dedsec-terminal.github.io/PolicyForge/](https://dedsec-terminal.github.io/PolicyForge/)
 
 2. **Clone and review locally:**
-   `ash
+   ```bash
    git clone https://github.com/dedsec-terminal/PolicyForge.git
    cd PolicyForge
-   `
-   Open the Markdown files directly in your preferred editor (VS Code, Obsidian, etc.), or serve the docs/ folder locally:
-   `ash
+   ```
+   Open the Markdown files directly in your preferred editor (VS Code, Obsidian, etc.), or serve the `docs/` folder locally:
+   ```bash
    python -m http.server 8000 --directory docs
    # Open http://localhost:8000 in your browser
-   `
+   ```
 
 *No build configuration, environment variables, or secrets are required—the repository is entirely documentation-driven.*
 
@@ -79,11 +79,11 @@ register/
 
 For professionals presenting this suite in a portfolio or interview:
 
-- **context/org-profile.md** — Demonstrates advanced scoping and regulatory analysis (DPDP Act, GDPR, PCI DSS).
-- **context/policy-style-guide.md** — Shows governance of authoring standards, naming conventions, RFC-2119 discipline, and a canonical policy example (highlighting process-oriented thinking).
-- **policies/*.md** — Eight full, authored policy documents with numbered safeguards and framework mappings, demonstrating domain knowledge and the ability to translate requirements into enforceable controls.
-- **mapping/control-traceability-matrix.md** — The CTM methodology and matrix: proves absolute traceability, reduces pre-audit review time, and enables targeted audit evidence collection.
-- **egister/exception-log.md** & **eview-cadence-tracker.md** — Demonstrates real-world operational governance including time-bound exceptions, compensating controls, and CISO sign-off workflows.
+- **`context/org-profile.md`** — Demonstrates advanced scoping and regulatory analysis (DPDP Act, GDPR, PCI DSS).
+- **`context/policy-style-guide.md`** — Shows governance of authoring standards, naming conventions, RFC-2119 discipline, and a canonical policy example (highlighting process-oriented thinking).
+- **`policies/*.md`** — Eight full, authored policy documents with numbered safeguards and framework mappings, demonstrating domain knowledge and the ability to translate requirements into enforceable controls.
+- **`mapping/control-traceability-matrix.md`** — The CTM methodology and matrix: proves absolute traceability, reduces pre-audit review time, and enables targeted audit evidence collection.
+- **`register/exception-log.md`** & **`review-cadence-tracker.md`** — Demonstrates real-world operational governance including time-bound exceptions, compensating controls, and CISO sign-off workflows.
 
 ## License
 
