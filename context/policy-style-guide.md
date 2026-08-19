@@ -1,8 +1,10 @@
 # PolicyForge Policy Style Guide
 
-> **Applies to:** the eight documents in [`policies/`](../policies/). The organisation profile, mapping artefacts, registers, README, and Pages viewer have their own purpose and are not policy templates.
+> **Audience:** Policy authors and reviewers.
+> **Purpose:** Establish consistent structure, tone, and specificity across FinNexus Solutions policy documents.
+> **Scope:** The eight documents in [`policies/`](../policies/). The organisation profile, mapping artefacts, registers, README, and Pages viewer have their own purpose and are not policy templates.
 
-This guide establishes the common structure, drafting discipline, and quality checks for FinNexus Solutions policy documents. It is intentionally concise: the canonical implementation is the [Data Classification & Handling Policy](../policies/data-classification-handling.md), not a duplicate copy of it.
+This guide establishes the common drafting discipline and quality checks for the policy suite. It is intentionally concise: the canonical implementation is the [Data Classification & Handling Policy](../policies/data-classification-handling.md), not a duplicate copy of it.
 
 ## 1. Required Policy Structure
 
