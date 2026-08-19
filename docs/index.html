@@ -172,6 +172,9 @@
       <div class="ng"><div class="ng-lbl">Overview</div>
         <a class="nl" data-src="README.md"                                    href="#readme">README</a>
       </div>
+      <div class="ng"><div class="ng-lbl">Org Context</div>
+        <a class="nl" data-src="context/org-profile.md" href="#org-profile">Organisation Profile</a>
+      </div>
       <div class="ng"><div class="ng-lbl">Policies</div>
         <a class="nl" data-src="policies/acceptable-use.md"                href="#acceptable-use">Acceptable Use</a>
         <a class="nl" data-src="policies/access-management.md"             href="#access-management">Access Management</a>
@@ -189,9 +192,6 @@
       <div class="ng"><div class="ng-lbl">Governance Registers</div>
         <a class="nl" data-src="register/exception-log.md"          href="#exception-log">Exception Log</a>
         <a class="nl" data-src="register/review-cadence-tracker.md" href="#review-cadence">Review Cadence Tracker</a>
-      </div>
-      <div class="ng"><div class="ng-lbl">Org Context</div>
-        <a class="nl" data-src="context/org-profile.md" href="#org-profile">Organisation Profile</a>
       </div>
     </div>
   </nav>
@@ -218,6 +218,11 @@
     "id": "readme",
     "src": "README.md",
     "title": "README"
+  },
+  {
+    "id": "org-profile",
+    "src": "context/org-profile.md",
+    "title": "Organisation Profile"
   },
   {
     "id": "acceptable-use",
@@ -279,15 +284,13 @@
     "src": "register/review-cadence-tracker.md",
     "title": "Review Cadence Tracker"
   },
-  {
-    "id": "org-profile",
-    "src": "context/org-profile.md",
-    "title": "Organisation Profile"
-  }
 ];
   
   var md = document.getElementById('md');
   var s = document.getElementById('s');
+  var loader = document.getElementById('loader');
+  var err = document.getElementById('err');
+  var requestId = 0;
 
   function getDocById(id) {
     return registry.find(function(d) { return d.id === id; });
@@ -300,22 +303,36 @@
 
   function setActive(id) {
     document.querySelectorAll('.nl').forEach(function(l) {
-      if (l.getAttribute('href') === '#' + id) {
-        l.classList.add('bg-gray-800','text-white');
-      } else {
-        l.classList.remove('bg-gray-800','text-white');
-      }
+      var active = l.getAttribute('href') === '#' + id;
+      l.classList.toggle('active', active);
+      if (active) l.setAttribute('aria-current', 'page');
+      else l.removeAttribute('aria-current');
     });
   }
 
   function load(doc) {
+    var currentRequest = ++requestId;
+    loader.classList.add('v');
+    err.classList.remove('v');
     fetch(doc.src)
-      .then(function(r) { return r.ok ? r.text() : 'Error loading document.' })
+      .then(function(r) {
+        if (!r.ok) throw new Error('Unable to load this document.');
+        return r.text();
+      })
       .then(function(text) {
+        if (currentRequest !== requestId) return;
         render(marked.parse(text));
         setActive(doc.id);
+        document.title = 'PolicyForge · ' + doc.title;
       })
-      .catch(function(e) { render('Network error.'); });
+      .catch(function() {
+        if (currentRequest !== requestId) return;
+        err.textContent = 'Unable to load this document. Please try again.';
+        err.classList.add('v');
+      })
+      .finally(function() {
+        if (currentRequest === requestId) loader.classList.remove('v');
+      });
   }
 
   function route() {
@@ -361,7 +378,7 @@
     });
     document.querySelectorAll('.ng').forEach(function(g) {
       var vis = Array.from(g.querySelectorAll('.nl')).some(function(l) { return !l.classList.contains('hidden'); });
-      g.querySelector('.ng-title').style.display = vis ? 'block' : 'none';
+      g.style.display = vis ? 'block' : 'none';
     });
   });
 
