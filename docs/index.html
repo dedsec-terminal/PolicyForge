@@ -344,7 +344,7 @@
       if (href.endsWith('.md') && !href.startsWith('http')) {
         // Resolve target document precisely
         
-        var targetDoc = registry.find(function(d) { return d.src === href || '/' + d.src === href.replace(/\.\.\//g, '/') || d.src.endsWith(href.split('/').pop()) /* no basename */ /* strict matching */ });
+        var targetDoc = registry.find(function(d) { return d.src === href || '/' + d.src === href.replace(/\.\.\//g, '/'); });
         if (targetDoc) {
           e.preventDefault();
           history.pushState(null, '', '#' + targetDoc.id);
