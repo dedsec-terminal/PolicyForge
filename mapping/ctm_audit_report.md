@@ -5,16 +5,16 @@
 | Field           | Value              |
 | --------------- | ------------------ |
 | Document ID     | CTM-AR-XX          |
-| Version         | XX                 |
+| Version         | X.X                |
 | Classification  | Internal - General |
-| Status          | Final              |
-| Effective Date  | DD.MM.YY           |
-| Assessment Date | DD.MM.YY           |
-| Last Reviewed   | DD.MM.YY           |
+| Status          | Portfolio draft    |
+| Effective Date  | Not adopted        |
+| Assessment Date | Illustrative       |
+| Last Reviewed   | Not applicable     |
 
 ## 1. Executive Summary
 
-A formal assessment of the Control Traceability Matrix (CTM) was conducted to verify mapping accuracy between internal FinNexus Solutions security controls and specified primary-source compliance frameworks. The matrix mappings for ISO/IEC 27001:2022, NIST SP 800-88 Rev. 2, PCI DSS v4.0.1, GDPR, and DPDP Act 2023 were found to be technically accurate. Corrections were implemented to align legacy NIST CSF 1.1 citations to NIST CSF 2.0 taxonomy. One control (PA-10) remains in 'Review Required' status pending DPO adjudication on privacy implications. 
+This illustrative assessment shows how a mapping-quality review can test the relationship between internal controls and cited primary-source frameworks. It is not an independent audit, legal opinion, certification, or evidence that a control operates effectively. The recorded corrections align legacy NIST CSF 1.1 citations to the NIST CSF 2.0 taxonomy; PA-10 remains in “Review Required” status pending DPO assessment of the proposed implementation.
 
 ## 2. Objective
 
@@ -28,7 +28,7 @@ Verify the technical accuracy, version currency, and semantic alignment of contr
 
 ## 4. Criteria and Authoritative Sources
 
-Mappings were assessed against the current authoritative texts:
+The exercise references the following authoritative texts. Their current version, applicability, and effective date must be reconfirmed before operational use:
 * NIST SP 800-88 Rev. 2 (Guidelines for Media Sanitization)
 * NIST CSF 2.0 (Cybersecurity Framework)
 * PCI DSS v4.0.1 (Payment Card Industry Data Security Standard)
@@ -40,7 +40,7 @@ Mappings were assessed against the current authoritative texts:
 ## 5. Methodology
 
 The assessment utilized the following procedure:
-1. **Version Validation:** Confirmed that referenced frameworks reflect currently active standard versions.
+1. **Version Validation:** Compare cited framework versions with the versions designated for the review; reconfirm current versions and effective dates before use.
 2. **Semantic Applicability Review:** Compared the control objective against the explicit text of the cited framework requirement.
 3. **Consistency Testing:** Verified that mappings do not conflate separate technical or legal requirements (e.g., separating DPDP Act 2023 statutory requirements from DPDP Rules 2025 notification timelines).
 4. **Exception Review:** Validated the rationale for any controls flagged for 'Review'.
@@ -64,9 +64,9 @@ The assessment utilized the following procedure:
 
 ## 8. Overall Conclusion
 
-Mapping accuracy was assessed across 83 organizational controls. The matrix demonstrates precise control-mapping judgment and relies on defensible semantic relationships rather than abstract assertions. Subject to the resolution of the single pending privacy review (PA-10), the Control Traceability Matrix provides a verified representation of internal control alignment against primary-source compliance requirements.
+The exercise covers 83 illustrative controls and demonstrates a repeatable approach to control mapping. It does not verify legal compliance or control operation. Before the matrix is used outside this portfolio, the control owners, Legal/Compliance, and an independent reviewer should validate applicability, mapping accuracy, implementation evidence, and the PA-10 privacy review.
 
 ## 9. References
 
-* Control Traceability Matrix (Version XX)
-* FinNexus Solutions Policy Suite (Versions 1.0 - 2.0)
+* Control Traceability Matrix (Version X.X, illustrative)
+* FinNexus Solutions Policy Suite (illustrative drafts)

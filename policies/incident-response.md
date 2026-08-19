@@ -5,7 +5,7 @@
 | **Policy ID**          | IR                                                               |
 | **Document Title**     | Incident Response Policy                                         |
 | **Version**            | 1.0                                                              |
-| **Status**             | Active                                                           |
+| **Status**             | Draft (illustrative)                                             |
 | **Classification**     | Internal - Restricted                                            |
 | **Effective Date**     | DD.MM.YY                                                       |
 | **Last Reviewed**      | DD.MM.YY                                                       |

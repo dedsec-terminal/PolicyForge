@@ -1,7 +1,9 @@
 # Control Traceability Matrix (CTM)
 ## FinNexus Solutions - PolicyForge Suite
 
-**Version:** XX
+**Version:** X.X
+
+> **Use limitation:** This matrix records a portfolio mapping-quality exercise. “Confirmed,” “Corrected,” and “Review Required” describe the mapping review status only; they do not evidence control design, implementation, operating effectiveness, legal applicability, or compliance. Confirm framework currency and effective dates with the control owner and Legal/Compliance before use.
 
 ---
 
@@ -18,6 +20,7 @@
 | **DPDP Act Ref** | India DPDP Act 2023 / Rules 2025 Section reference (blank if not applicable) |
 | **GDPR Ref** | EU GDPR Article reference (blank if not applicable) |
 | **Notes** | Flags, cross-references to other controls, or "Review" rationale |
+| **Status** | Mapping-quality review status; not a control-effectiveness assessment |
 
 ---
 
@@ -178,7 +181,7 @@
 
 ## Open Review Items
 
-The following cells were flagged **Review** and require manual verification by the Compliance team before use in audit evidence packages:
+The following cells were flagged **Review** and require manual verification by the Compliance team before the mapping is relied on for an audit evidence package:
 
 | Flag | Location | Issue |
 | :--- | :--- | :--- |

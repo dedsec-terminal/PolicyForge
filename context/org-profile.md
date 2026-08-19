@@ -2,6 +2,8 @@
 
 This document defines the foundational organizational context, structure, and risk profile for FinNexus Solutions. It serves as the reference point for scoping and contextualizing all security policies and procedures within the organization.
 
+> **Portfolio status:** FinNexus Solutions is a fictional organization. The policies, registers, and mappings in this repository are illustrative drafts, not approved operating records or evidence of compliance.
+
 ## 1. Organization Overview
 
 - **Organization Name:** FinNexus Solutions
@@ -18,6 +20,8 @@ Due to its global operations and the nature of its business, FinNexus Solutions 
 - **European Union:** General Data Protection Regulation (GDPR).
 - **United States:** Various state privacy laws (e.g., CCPA/CPRA) and federal financial regulations.
 - **Industry Standards:** Payment Card Industry Data Security Standard (PCI DSS) due to processing and storing payment card data.
+
+Framework references are a scoping aid, not a legal determination of applicability or compliance. The DPDP Act and the Digital Personal Data Protection Rules, 2025 have phased commencement provisions; Legal and Compliance must confirm the obligations in force before relying on any mapped requirement.
 
 ## 3. Risk Profile
 

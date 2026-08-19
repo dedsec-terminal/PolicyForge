@@ -1,6 +1,6 @@
 # Policy Review Cadence Tracker
 
-This document tracks the governance schedule, review cycles, and approval status for all policies within PolicyForge.
+This document illustrates the governance schedule, review cycles, and approval status fields for policies within PolicyForge. Dates and statuses below are examples; they do not evidence an approved policy lifecycle.
 
 ## Review Frequency Requirements
 - **Standard Review:** Annually (every 12 months from last approval date).
@@ -12,11 +12,11 @@ This document tracks the governance schedule, review cycles, and approval status
 
 | Policy ID | Policy Name | Owner Role | Review Frequency | Last Reviewed | Next Due | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| AM | Access Management Policy | IT | Annual | DD.MM.YY | DD.MM.YY | Current |
-| AU | Acceptable Use Policy | CISO | Annual | DD.MM.YY | DD.MM.YY | Current |
-| DC | Data Classification & Handling Policy | CISO | Annual | DD.MM.YY | DD.MM.YY | Current |
-| IR | Incident Response Policy | IT | Annual | DD.MM.YY | DD.MM.YY | Current |
-| VR | Vendor & Third-Party Risk Policy | Legal/Compliance | Annual | DD.MM.YY | DD.MM.YY | Current |
-| PA | Password & Authentication Policy | IT | Annual | DD.MM.YY | DD.MM.YY | Current |
-| AS | Asset Management Policy | IT | Annual | DD.MM.YY | DD.MM.YY | Current |
-| BC | Business Continuity & Backup Policy | CISO | Annual | DD.MM.YY | DD.MM.YY | Current |
+| AM | Access Management Policy | IT Security Lead | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |
+| AU | Acceptable Use Policy | Chief Information Security Officer (CISO) | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |
+| DC | Data Classification & Handling Policy | Compliance Lead | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |
+| IR | Incident Response Policy | IT Security Lead | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |
+| VR | Vendor & Third-Party Risk Policy | Compliance Lead | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |
+| PA | Password & Authentication Policy | IT Security Lead | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |
+| AS | Asset Management Policy | IT Asset Manager | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |
+| BC | Business Continuity & Backup Policy | CISO | Annual | DD.MM.YY | DD.MM.YY | Draft (not adopted) |

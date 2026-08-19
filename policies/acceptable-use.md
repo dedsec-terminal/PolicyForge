@@ -5,7 +5,7 @@
 | **Policy ID** | AU |
 | **Document Title** | Acceptable Use Policy |
 | **Version** | 1.0 |
-| **Status** | Active |
+| **Status** | Draft (illustrative) |
 | **Classification** | Internal - General |
 | **Effective Date** | DD.MM.YY |
 | **Last Reviewed** | DD.MM.YY |
